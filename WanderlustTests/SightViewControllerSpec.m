@@ -10,8 +10,6 @@
 #import "Expecta.h"
 
 #import "SightViewController.h"
-#import "Sight.h"
-#import "BannerTableViewCell.h"
 
 SpecBegin(SightViewController)
 
