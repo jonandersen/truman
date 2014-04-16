@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		052A2DE1037F4FBDBD5B71E1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73705C8A1CC24B26BF57BE3F /* libPods.a */; };
 		058C698C18FF0B380031F618 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698B18FF0B380031F618 /* Foundation.framework */; };
 		058C698E18FF0B380031F618 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698D18FF0B380031F618 /* CoreGraphics.framework */; };
 		058C699018FF0B380031F618 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698F18FF0B380031F618 /* UIKit.framework */; };
@@ -21,7 +22,13 @@
 		058C69AF18FF0B380031F618 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698B18FF0B380031F618 /* Foundation.framework */; };
 		058C69B018FF0B380031F618 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698F18FF0B380031F618 /* UIKit.framework */; };
 		058C69B818FF0B380031F618 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 058C69B618FF0B380031F618 /* InfoPlist.strings */; };
-		058C69BA18FF0B380031F618 /* WanderlustTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69B918FF0B380031F618 /* WanderlustTests.m */; };
+		058C69C918FF0B5E0031F618 /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69C318FF0B5E0031F618 /* BannerTableViewCell.m */; };
+		058C69CA18FF0B5E0031F618 /* SightDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69C518FF0B5E0031F618 /* SightDataSource.m */; };
+		058C69CB18FF0B5E0031F618 /* SightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69C718FF0B5E0031F618 /* SightViewController.m */; };
+		058C69CE18FF0B660031F618 /* SightDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69CC18FF0B660031F618 /* SightDataSourceSpec.m */; };
+		058C69CF18FF0B660031F618 /* SightViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69CD18FF0B660031F618 /* SightViewControllerSpec.m */; };
+		058C69D218FF0C870031F618 /* Sight.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69D018FF0C870031F618 /* Sight.m */; };
+		4E603C222BE64C73A413B04D /* libPods-WanderlustTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F24267DFDA254621B782269F /* libPods-WanderlustTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +61,20 @@
 		058C69AD18FF0B380031F618 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		058C69B518FF0B380031F618 /* WanderlustTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WanderlustTests-Info.plist"; sourceTree = "<group>"; };
 		058C69B718FF0B380031F618 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		058C69B918FF0B380031F618 /* WanderlustTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WanderlustTests.m; sourceTree = "<group>"; };
+		058C69C318FF0B5E0031F618 /* BannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
+		058C69C418FF0B5E0031F618 /* BannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewCell.h; sourceTree = "<group>"; };
+		058C69C518FF0B5E0031F618 /* SightDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightDataSource.m; sourceTree = "<group>"; };
+		058C69C618FF0B5E0031F618 /* SightDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightDataSource.h; sourceTree = "<group>"; };
+		058C69C718FF0B5E0031F618 /* SightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewController.m; sourceTree = "<group>"; };
+		058C69C818FF0B5E0031F618 /* SightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightViewController.h; sourceTree = "<group>"; };
+		058C69CC18FF0B660031F618 /* SightDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightDataSourceSpec.m; sourceTree = "<group>"; };
+		058C69CD18FF0B660031F618 /* SightViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewControllerSpec.m; sourceTree = "<group>"; };
+		058C69D018FF0C870031F618 /* Sight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sight.m; sourceTree = "<group>"; };
+		058C69D118FF0C870031F618 /* Sight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sight.h; sourceTree = "<group>"; };
+		49A4783A36894C17847E3205 /* Pods-WanderlustTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WanderlustTests.xcconfig"; path = "Pods/Pods-WanderlustTests.xcconfig"; sourceTree = "<group>"; };
+		6959537B4BF94BB09E6F34D0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		73705C8A1CC24B26BF57BE3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F24267DFDA254621B782269F /* libPods-WanderlustTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WanderlustTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +85,7 @@
 				058C698E18FF0B380031F618 /* CoreGraphics.framework in Frameworks */,
 				058C699018FF0B380031F618 /* UIKit.framework in Frameworks */,
 				058C698C18FF0B380031F618 /* Foundation.framework in Frameworks */,
+				052A2DE1037F4FBDBD5B71E1 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +96,7 @@
 				058C69AE18FF0B380031F618 /* XCTest.framework in Frameworks */,
 				058C69B018FF0B380031F618 /* UIKit.framework in Frameworks */,
 				058C69AF18FF0B380031F618 /* Foundation.framework in Frameworks */,
+				4E603C222BE64C73A413B04D /* libPods-WanderlustTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +110,8 @@
 				058C69B318FF0B380031F618 /* WanderlustTests */,
 				058C698A18FF0B380031F618 /* Frameworks */,
 				058C698918FF0B380031F618 /* Products */,
+				6959537B4BF94BB09E6F34D0 /* Pods.xcconfig */,
+				49A4783A36894C17847E3205 /* Pods-WanderlustTests.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -107,6 +131,8 @@
 				058C698D18FF0B380031F618 /* CoreGraphics.framework */,
 				058C698F18FF0B380031F618 /* UIKit.framework */,
 				058C69AD18FF0B380031F618 /* XCTest.framework */,
+				73705C8A1CC24B26BF57BE3F /* libPods.a */,
+				F24267DFDA254621B782269F /* libPods-WanderlustTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -114,6 +140,14 @@
 		058C699118FF0B380031F618 /* Wanderlust */ = {
 			isa = PBXGroup;
 			children = (
+				058C69D018FF0C870031F618 /* Sight.m */,
+				058C69D118FF0C870031F618 /* Sight.h */,
+				058C69C318FF0B5E0031F618 /* BannerTableViewCell.m */,
+				058C69C418FF0B5E0031F618 /* BannerTableViewCell.h */,
+				058C69C518FF0B5E0031F618 /* SightDataSource.m */,
+				058C69C618FF0B5E0031F618 /* SightDataSource.h */,
+				058C69C718FF0B5E0031F618 /* SightViewController.m */,
+				058C69C818FF0B5E0031F618 /* SightViewController.h */,
 				058C699A18FF0B380031F618 /* AppDelegate.h */,
 				058C699B18FF0B380031F618 /* AppDelegate.m */,
 				058C699D18FF0B380031F618 /* Main_iPhone.storyboard */,
@@ -140,7 +174,8 @@
 		058C69B318FF0B380031F618 /* WanderlustTests */ = {
 			isa = PBXGroup;
 			children = (
-				058C69B918FF0B380031F618 /* WanderlustTests.m */,
+				058C69CC18FF0B660031F618 /* SightDataSourceSpec.m */,
+				058C69CD18FF0B660031F618 /* SightViewControllerSpec.m */,
 				058C69B418FF0B380031F618 /* Supporting Files */,
 			);
 			path = WanderlustTests;
@@ -162,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 058C69BD18FF0B380031F618 /* Build configuration list for PBXNativeTarget "Wanderlust" */;
 			buildPhases = (
+				29BF07E669954027AE0FA78D /* Check Pods Manifest.lock */,
 				058C698418FF0B380031F618 /* Sources */,
 				058C698518FF0B380031F618 /* Frameworks */,
 				058C698618FF0B380031F618 /* Resources */,
+				5E5E76051F9649F0AC5940CB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,9 +216,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 058C69C018FF0B380031F618 /* Build configuration list for PBXNativeTarget "WanderlustTests" */;
 			buildPhases = (
+				E69E79FAEDE341A18BCA1683 /* Check Pods Manifest.lock */,
 				058C69A818FF0B380031F618 /* Sources */,
 				058C69A918FF0B380031F618 /* Frameworks */,
 				058C69AA18FF0B380031F618 /* Resources */,
+				219EFAE3F2A9415DA4FA20B5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -248,12 +287,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		219EFAE3F2A9415DA4FA20B5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-WanderlustTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29BF07E669954027AE0FA78D /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5E5E76051F9649F0AC5940CB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E69E79FAEDE341A18BCA1683 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		058C698418FF0B380031F618 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				058C69CA18FF0B5E0031F618 /* SightDataSource.m in Sources */,
 				058C69A518FF0B380031F618 /* ViewController.m in Sources */,
+				058C69CB18FF0B5E0031F618 /* SightViewController.m in Sources */,
+				058C69D218FF0C870031F618 /* Sight.m in Sources */,
+				058C69C918FF0B5E0031F618 /* BannerTableViewCell.m in Sources */,
 				058C699C18FF0B380031F618 /* AppDelegate.m in Sources */,
 				058C699818FF0B380031F618 /* main.m in Sources */,
 			);
@@ -263,7 +369,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058C69BA18FF0B380031F618 /* WanderlustTests.m in Sources */,
+				058C69CF18FF0B660031F618 /* SightViewControllerSpec.m in Sources */,
+				058C69CE18FF0B660031F618 /* SightDataSourceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +494,7 @@
 		};
 		058C69BE18FF0B380031F618 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6959537B4BF94BB09E6F34D0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -400,6 +508,7 @@
 		};
 		058C69BF18FF0B380031F618 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6959537B4BF94BB09E6F34D0 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -413,6 +522,7 @@
 		};
 		058C69C118FF0B380031F618 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49A4783A36894C17847E3205 /* Pods-WanderlustTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Wanderlust.app/Wanderlust";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -435,6 +545,7 @@
 		};
 		058C69C218FF0B380031F618 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49A4783A36894C17847E3205 /* Pods-WanderlustTests.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Wanderlust.app/Wanderlust";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -470,6 +581,7 @@
 				058C69BF18FF0B380031F618 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		058C69C018FF0B380031F618 /* Build configuration list for PBXNativeTarget "WanderlustTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +590,7 @@
 				058C69C218FF0B380031F618 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
