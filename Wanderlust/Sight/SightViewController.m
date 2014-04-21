@@ -9,7 +9,7 @@
 
 @implementation SightViewController
 
--(instancetype) initWithSight:(Sight *) sight {
+-(instancetype) initWithSight:(SightViewModel *) sight {
     if(self = [super init]) {
         _sightDataSource = [[SightDataSource alloc] initWithConfigure:^(id cell, id url){}];
         self.sight = sight;

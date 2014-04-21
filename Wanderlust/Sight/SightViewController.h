@@ -1,11 +1,11 @@
 #import <UIKit/UIKit.h>
-#import "Sight.h"
+#import "SightViewModel.h"
 
 @interface SightViewController : UIViewController <UITableViewDelegate>
 
 @property(weak, nonatomic) IBOutlet UITableView *tableView;
-@property(strong, nonatomic) Sight *sight;
+@property(strong, nonatomic) SightViewModel *sight;
 
-- (instancetype)initWithSight:(Sight *)sight;
+- (instancetype)initWithSight:(SightViewModel *)sight;
 
 @end

@@ -15,10 +15,10 @@ SpecBegin(SightViewController)
 
 describe(@"SightViewController", ^{
     __block SightViewController *sut;
-    __block Sight *mockSight;
+    __block SightViewModel *mockSight;
 
     beforeEach(^{
-        mockSight = mock([Sight class]);
+        mockSight = mock([SightViewModel class]);
         [given([mockSight title]) willReturn:@"Konigsee"];
         [given([mockSight valueForKey:@"title"]) willReturn:@"Konigsee"];
         [given([mockSight valueForKeyPath:@"title"]) willReturn:@"Konigsee"];
