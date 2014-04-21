@@ -1,11 +1,3 @@
-//
-//  SightDataSource.m
-//  SeeIt
-//
-//  Created by Jon Andersen on 13/04/14.
-//  Copyright (c) 2014 Jon Andersen. All rights reserved.
-//
-
 #import "SightDataSource.h"
 #import "BannerTableViewCell.h"
 
@@ -36,7 +28,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 3;
+    return 1;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -27,12 +27,20 @@ describe(@"SightDataSource ", ^{
 
     });
 
+    it(@"should conform to UITableViewDataSource", ^{
+        expect(sut).to.conformTo(@protocol(UITableViewDataSource));
+    });
+
+    it(@"should conform to UITableViewDelegate", ^{
+        expect(sut).to.conformTo(@protocol(UITableViewDelegate));
+    });
+
 
     describe(@"numberOfRowsInSection", ^{
-        it(@"should have 3 cells", ^{
+        it(@"should have 1 cells", ^{
             [ sut tableView:nil numberOfRowsInSection:0];
             NSInteger rows = [sut tableView:tableView numberOfRowsInSection:0];
-            expect(rows).to.equal(3);
+            expect(rows).to.equal(1);
         });
 
     });

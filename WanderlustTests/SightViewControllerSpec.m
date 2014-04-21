@@ -19,8 +19,6 @@ describe(@"SightViewController", ^{
 
     beforeEach(^{
         mockSight = mock([SightViewModel class]);
-        [given([mockSight title]) willReturn:@"Konigsee"];
-        [given([mockSight valueForKey:@"title"]) willReturn:@"Konigsee"];
         [given([mockSight valueForKeyPath:@"title"]) willReturn:@"Konigsee"];
         sut = [[SightViewController alloc] initWithSight:mockSight];
         [sut viewDidLoad];
@@ -43,6 +41,8 @@ describe(@"SightViewController", ^{
             expect(sut.tableView.dataSource).toNot.beNil;
         });
     });
+
+
 
 });
 
