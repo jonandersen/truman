@@ -26,4 +26,8 @@ NSString *const SightCellIdentifier = @"SightCell";
     // Configure the view for the selected state
 }
 
+- (CGFloat) height {
+    return self.frame.size.height;
+}
+
 @end

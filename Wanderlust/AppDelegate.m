@@ -7,12 +7,21 @@
 //
 
 #import "AppDelegate.h"
+#import "SightViewController.h"
+#import "SightDataSource.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
+    SightViewController * vc = (SightViewController *)nav.topViewController;
+    SightViewModel *viewModel = [[SightViewModel alloc] init];
+    viewModel.title = @"ViewModel";
+
+    vc.sightDataSource = [[SightDataSource alloc] initWithSights:@[viewModel]];
+    vc.sight = viewModel;
     return YES;
 }
 							

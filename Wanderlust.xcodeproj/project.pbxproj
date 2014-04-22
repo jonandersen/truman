@@ -16,7 +16,6 @@
 		058C699C18FF0B380031F618 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C699B18FF0B380031F618 /* AppDelegate.m */; };
 		058C699F18FF0B380031F618 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058C699D18FF0B380031F618 /* Main_iPhone.storyboard */; };
 		058C69A218FF0B380031F618 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058C69A018FF0B380031F618 /* Main_iPad.storyboard */; };
-		058C69A518FF0B380031F618 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69A418FF0B380031F618 /* ViewController.m */; };
 		058C69A718FF0B380031F618 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058C69A618FF0B380031F618 /* Images.xcassets */; };
 		058C69AE18FF0B380031F618 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C69AD18FF0B380031F618 /* XCTest.framework */; };
 		058C69AF18FF0B380031F618 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698B18FF0B380031F618 /* Foundation.framework */; };
@@ -57,8 +56,6 @@
 		058C699B18FF0B380031F618 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		058C699E18FF0B380031F618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		058C69A118FF0B380031F618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		058C69A318FF0B380031F618 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		058C69A418FF0B380031F618 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		058C69A618FF0B380031F618 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		058C69AC18FF0B380031F618 /* WanderlustTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WanderlustTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		058C69AD18FF0B380031F618 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -153,8 +150,6 @@
 				058C699B18FF0B380031F618 /* AppDelegate.m */,
 				058C699D18FF0B380031F618 /* Main_iPhone.storyboard */,
 				058C69A018FF0B380031F618 /* Main_iPad.storyboard */,
-				058C69A318FF0B380031F618 /* ViewController.h */,
-				058C69A418FF0B380031F618 /* ViewController.m */,
 				058C69A618FF0B380031F618 /* Images.xcassets */,
 				058C699218FF0B380031F618 /* Supporting Files */,
 				F9AAB9AC60176E341BB6CB5D /* Sight */,
@@ -374,7 +369,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				058C69A518FF0B380031F618 /* ViewController.m in Sources */,
 				058C69C918FF0B5E0031F618 /* SightViewCell.m in Sources */,
 				058C699C18FF0B380031F618 /* AppDelegate.m in Sources */,
 				058C699818FF0B380031F618 /* main.m in Sources */,

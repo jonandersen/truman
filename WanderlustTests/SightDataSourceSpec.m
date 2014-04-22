@@ -56,6 +56,16 @@ describe(@"SightDataSource ", ^{
             NSInteger rows = [sut tableView:tableView numberOfRowsInSection:0];
             expect(rows).to.equal([mockSights count]);
         });
+    });
+
+    describe(@"height calcuation", ^{
+        it(@"should use the height for the cell", ^{
+
+            [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier]) willReturn:cell];
+            [sut tableView:tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            [verify(cell) height];
+        });
+
 
     });
 
@@ -64,7 +74,7 @@ describe(@"SightDataSource ", ^{
         NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
 
         it(@"should return a Sight Cell on position 0", ^{
-            [given([tableView dequeueReusableCellWithIdentifier:@"SightCell"])willReturn:cell];
+            [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier])willReturn:cell];
             UITableViewCell *result = [sut tableView:tableView cellForRowAtIndexPath:index];
             expect(result).to.beKindOf([SightViewCell class]);
 
@@ -72,7 +82,7 @@ describe(@"SightDataSource ", ^{
 
         it(@"should configure the Sight Cell", ^{
 
-            [given([tableView dequeueReusableCellWithIdentifier:@"SightCell"]) willReturn:cell];
+            [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier]) willReturn:cell];
             [sut tableView:tableView cellForRowAtIndexPath:index];
             expect(configuredCell).to.beTruthy;
         });

@@ -3,6 +3,7 @@
 @interface SightDataSource ()
 
     @property (strong, nonatomic) NSArray *sights;
+    @property (strong, nonatomic) SightViewCell *sightViewCell;
 
 @end
 
@@ -16,11 +17,20 @@
     return self;
 }
 
+- (void) dealloc {
+    self.sights = nil;
+    self.sightViewCell = nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    SightViewCell *cell = [self sightViewCellFromTable:tableView];
+    return [cell height];
+}
 
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -36,6 +46,14 @@
 
     return cell;
 
+}
+
+
+- (SightViewCell *)sightViewCellFromTable:(UITableView *) tableView {
+    if (!self.sightViewCell) {
+        self.sightViewCell = [tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
+    }
+    return self.sightViewCell;
 }
 
 @end
