@@ -22,13 +22,15 @@
 		058C69AF18FF0B380031F618 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698B18FF0B380031F618 /* Foundation.framework */; };
 		058C69B018FF0B380031F618 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698F18FF0B380031F618 /* UIKit.framework */; };
 		058C69B818FF0B380031F618 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 058C69B618FF0B380031F618 /* InfoPlist.strings */; };
-		058C69C918FF0B5E0031F618 /* BannerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69C318FF0B5E0031F618 /* BannerTableViewCell.m */; };
+		058C69C918FF0B5E0031F618 /* SightViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69C318FF0B5E0031F618 /* SightViewCell.m */; };
 		058C69CE18FF0B660031F618 /* SightDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69CC18FF0B660031F618 /* SightDataSourceSpec.m */; };
 		058C69CF18FF0B660031F618 /* SightViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69CD18FF0B660031F618 /* SightViewControllerSpec.m */; };
 		4E603C222BE64C73A413B04D /* libPods-WanderlustTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F24267DFDA254621B782269F /* libPods-WanderlustTests.a */; };
 		F9AAB40C08709D090CF7A7F7 /* SightDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB91049A796B151D64506 /* SightDataSource.m */; };
+		F9AAB651565770D4810DF36B /* UITableViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */; };
 		F9AAB6926A89E0CB3AF23EF2 /* SightViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB3C95BA2C74ECE755324 /* SightViewModelSpec.m */; };
 		F9AABABFAE69889A040437D9 /* SightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB16F24E3319A715AE138 /* SightViewController.m */; };
+		F9AABB0C7B5FD7CB8E56CD67 /* SightViewCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB2F30622ADE9FF61B91F /* SightViewCellSpec.m */; };
 		F9AABEAB81B11D6FCD0BB83C /* SightViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABF38C75175267D6A5A51 /* SightViewModel.m */; };
 /* End PBXBuildFile section */
 
@@ -62,17 +64,20 @@
 		058C69AD18FF0B380031F618 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		058C69B518FF0B380031F618 /* WanderlustTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WanderlustTests-Info.plist"; sourceTree = "<group>"; };
 		058C69B718FF0B380031F618 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		058C69C318FF0B5E0031F618 /* BannerTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerTableViewCell.m; sourceTree = "<group>"; };
-		058C69C418FF0B5E0031F618 /* BannerTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerTableViewCell.h; sourceTree = "<group>"; };
+		058C69C318FF0B5E0031F618 /* SightViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewCell.m; sourceTree = "<group>"; };
+		058C69C418FF0B5E0031F618 /* SightViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightViewCell.h; sourceTree = "<group>"; };
 		058C69CC18FF0B660031F618 /* SightDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightDataSourceSpec.m; sourceTree = "<group>"; };
 		058C69CD18FF0B660031F618 /* SightViewControllerSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewControllerSpec.m; sourceTree = "<group>"; };
 		49A4783A36894C17847E3205 /* Pods-WanderlustTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WanderlustTests.xcconfig"; path = "Pods/Pods-WanderlustTests.xcconfig"; sourceTree = "<group>"; };
 		6959537B4BF94BB09E6F34D0 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		73705C8A1CC24B26BF57BE3F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F24267DFDA254621B782269F /* libPods-WanderlustTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WanderlustTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewMock.m; sourceTree = "<group>"; };
 		F9AAB16F24E3319A715AE138 /* SightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewController.m; sourceTree = "<group>"; };
+		F9AAB2F30622ADE9FF61B91F /* SightViewCellSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewCellSpec.m; sourceTree = "<group>"; };
 		F9AAB3C95BA2C74ECE755324 /* SightViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewModelSpec.m; sourceTree = "<group>"; };
 		F9AAB67153552A605B79C71A /* SightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightViewController.h; sourceTree = "<group>"; };
+		F9AAB881269D1125BC830C1E /* UITableViewMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewMock.h; sourceTree = "<group>"; };
 		F9AAB91049A796B151D64506 /* SightDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightDataSource.m; sourceTree = "<group>"; };
 		F9AABCEA2AC26E08D8E4B9B1 /* SightViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightViewModel.h; sourceTree = "<group>"; };
 		F9AABEAF180D9830D65CC31B /* SightDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightDataSource.h; sourceTree = "<group>"; };
@@ -142,8 +147,8 @@
 		058C699118FF0B380031F618 /* Wanderlust */ = {
 			isa = PBXGroup;
 			children = (
-				058C69C318FF0B5E0031F618 /* BannerTableViewCell.m */,
-				058C69C418FF0B5E0031F618 /* BannerTableViewCell.h */,
+				058C69C318FF0B5E0031F618 /* SightViewCell.m */,
+				058C69C418FF0B5E0031F618 /* SightViewCell.h */,
 				058C699A18FF0B380031F618 /* AppDelegate.h */,
 				058C699B18FF0B380031F618 /* AppDelegate.m */,
 				058C699D18FF0B380031F618 /* Main_iPhone.storyboard */,
@@ -175,6 +180,9 @@
 				058C69CD18FF0B660031F618 /* SightViewControllerSpec.m */,
 				058C69B418FF0B380031F618 /* Supporting Files */,
 				F9AAB3C95BA2C74ECE755324 /* SightViewModelSpec.m */,
+				F9AAB2F30622ADE9FF61B91F /* SightViewCellSpec.m */,
+				F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */,
+				F9AAB881269D1125BC830C1E /* UITableViewMock.h */,
 			);
 			path = WanderlustTests;
 			sourceTree = "<group>";
@@ -367,7 +375,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				058C69A518FF0B380031F618 /* ViewController.m in Sources */,
-				058C69C918FF0B5E0031F618 /* BannerTableViewCell.m in Sources */,
+				058C69C918FF0B5E0031F618 /* SightViewCell.m in Sources */,
 				058C699C18FF0B380031F618 /* AppDelegate.m in Sources */,
 				058C699818FF0B380031F618 /* main.m in Sources */,
 				F9AABABFAE69889A040437D9 /* SightViewController.m in Sources */,
@@ -383,6 +391,8 @@
 				058C69CF18FF0B660031F618 /* SightViewControllerSpec.m in Sources */,
 				058C69CE18FF0B660031F618 /* SightDataSourceSpec.m in Sources */,
 				F9AAB6926A89E0CB3AF23EF2 /* SightViewModelSpec.m in Sources */,
+				F9AABB0C7B5FD7CB8E56CD67 /* SightViewCellSpec.m in Sources */,
+				F9AAB651565770D4810DF36B /* UITableViewMock.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

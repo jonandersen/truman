@@ -1,25 +1,10 @@
 #import "SightViewController.h"
 #import "SightDataSource.h"
 
-@interface SightViewController () {
-    SightDataSource *_sightDataSource;
-}
-
-@end
-
 @implementation SightViewController
 
--(instancetype) initWithSight:(SightViewModel *) sight {
-    if(self = [super init]) {
-        _sightDataSource = [[SightDataSource alloc] initWithConfigure:^(id cell, id url){}];
-        self.sight = sight;
-    }
-    return self;
-}
-
 - (void)dealloc {
-    _sightDataSource = nil;
-
+    self.sightDataSource = nil;
 }
 
 - (void)viewDidLoad
@@ -28,7 +13,11 @@
     [RACObserve(self, sight.title) subscribeNext:^(NSString*  title) {
         self.title = title;
     }];
-    self.tableView.dataSource = _sightDataSource;
+    self.sightDataSource.sightConfigure = ^(SightViewCell *cell, SightViewModel *sight ){
+        cell.titleLabel.text = sight.title;
+    };
+    self.tableView.delegate = self.sightDataSource;
+    self.tableView.dataSource = self.sightDataSource;
 
     // Do any additional setup after loading the view.
 }

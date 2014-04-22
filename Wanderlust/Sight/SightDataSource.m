@@ -1,25 +1,22 @@
 #import "SightDataSource.h"
-#import "BannerTableViewCell.h"
 
 @interface SightDataSource ()
 
-@property (nonatomic, copy) BannerTableViewCellConfigureBlock bannerCellConfigure;
+    @property (strong, nonatomic) NSArray *sights;
 
 @end
 
 @implementation SightDataSource
 
-- (id)init {
-    return nil;
-}
 
-- (instancetype) initWithConfigure:(BannerTableViewCellConfigureBlock)bannerCellConfigure{
-    self = [super init];
-    if (self) {
-        self.bannerCellConfigure = [bannerCellConfigure copy];
+- (instancetype) initWithSights:(NSArray *)sights{
+    if (self  = [super init]) {
+        self.sights = sights;
     }
     return self;
 }
+
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -28,13 +25,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return [self.sights count];
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    BannerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BannerCell"];
-    self.bannerCellConfigure(cell, @"url");
+    SightViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
+    SightViewModel *sight = [self.sights objectAtIndex:(NSUInteger) [indexPath row]];
+    self.sightConfigure(cell, sight);
 
     return cell;
 

@@ -1,13 +1,14 @@
 
-#import "BannerTableViewCell.h"
+#import "SightViewCell.h"
+#import "SightViewModel.h"
 
-typedef void (^BannerTableViewCellConfigureBlock)(id cell, id item);
+typedef void (^BannerTableViewCellConfigureBlock)(SightViewCell *cell, SightViewModel *item);
 
 @interface SightDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 
+@property (nonatomic, copy) BannerTableViewCellConfigureBlock sightConfigure;
 
-- (instancetype) initWithConfigure:(BannerTableViewCellConfigureBlock)bannerCellConfigure;
-
+- (instancetype) initWithSights:(NSArray *)sights;
 
 
 @end

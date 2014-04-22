@@ -1,7 +1,9 @@
 
-#import "BannerTableViewCell.h"
+#import "SightViewCell.h"
 
-@implementation BannerTableViewCell
+@implementation SightViewCell
+
+NSString *const SightCellIdentifier = @"SightCell";
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
