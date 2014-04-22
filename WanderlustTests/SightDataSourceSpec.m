@@ -49,11 +49,11 @@ describe(@"SightDataSource ", ^{
 //    });
 
 
-    describe(@"numberOfRowsInSection", ^{
+    describe(@"numberOfSectionsInTableView", ^{
         it(@"should have as many as sights", ^{
             [given([mockSights count]) willReturn:
             [NSNumber numberWithInt:2]];
-            NSInteger rows = [sut tableView:tableView numberOfRowsInSection:0];
+            NSInteger rows = [sut numberOfSectionsInTableView:tableView];
             expect(rows).to.equal([mockSights count]);
         });
     });
