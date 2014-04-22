@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		052A2DE1037F4FBDBD5B71E1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73705C8A1CC24B26BF57BE3F /* libPods.a */; };
+		0588BC8D1906FC1400EA73C8 /* testImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0588BC8C1906FC1400EA73C8 /* testImage.jpg */; };
 		058C698C18FF0B380031F618 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698B18FF0B380031F618 /* Foundation.framework */; };
 		058C698E18FF0B380031F618 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698D18FF0B380031F618 /* CoreGraphics.framework */; };
 		058C699018FF0B380031F618 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698F18FF0B380031F618 /* UIKit.framework */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0588BC8C1906FC1400EA73C8 /* testImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = testImage.jpg; path = ../testImage.jpg; sourceTree = "<group>"; };
 		058C698818FF0B380031F618 /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		058C698B18FF0B380031F618 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		058C698D18FF0B380031F618 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +109,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0588BC8E1906FC2900EA73C8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0588BC8C1906FC1400EA73C8 /* testImage.jpg */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		058C697F18FF0B380031F618 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +154,7 @@
 		058C699118FF0B380031F618 /* Wanderlust */ = {
 			isa = PBXGroup;
 			children = (
+				0588BC8E1906FC2900EA73C8 /* Resources */,
 				058C69C318FF0B5E0031F618 /* SightViewCell.m */,
 				058C69C418FF0B5E0031F618 /* SightViewCell.h */,
 				058C699A18FF0B380031F618 /* AppDelegate.h */,
@@ -284,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0588BC8D1906FC1400EA73C8 /* testImage.jpg in Resources */,
 				058C69A218FF0B380031F618 /* Main_iPad.storyboard in Resources */,
 				058C69A718FF0B380031F618 /* Images.xcassets in Resources */,
 				058C699F18FF0B380031F618 /* Main_iPhone.storyboard in Resources */,

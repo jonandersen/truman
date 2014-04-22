@@ -76,21 +76,40 @@ describe(@"SightViewController", ^{
         });
     });
 
-    it(@"should configure the SightViewCell", ^{
-        MKTArgumentCaptor *argument = [[MKTArgumentCaptor alloc] init];
-        SightViewCell *cellMock = mock([SightViewCell class]);
-        SightViewModel *viewModel = mock([SightViewModel class]);
+    describe(@"Configure SightViewCell", ^{
+        __block SightViewCell *cellMock;
+        __block SightViewModel *viewModel;
+        __block MKTArgumentCaptor *argument;
+        __block BannerTableViewCellConfigureBlock block;
 
-        [sut.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        beforeEach(^{
+            argument = [[MKTArgumentCaptor alloc] init];
+            cellMock = mock([SightViewCell class]);
+            viewModel = mock([SightViewModel class]);
+            [sut.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+            [verify(mockDataSource) setSightConfigure:[argument capture]];
+            block = [argument value];
+        });
 
+        it(@"should set title", ^{
+            block(cellMock, viewModel);
+            [verify(viewModel) title];
+            [verify(cellMock) titleLabel];
 
+        });
 
-        [verify(mockDataSource) setSightConfigure:[argument capture]];
-        BannerTableViewCellConfigureBlock block = [argument value];
-        block(cellMock, viewModel);
-        [verify(cellMock) titleLabel];
-
+        it(@"should set image", ^{
+            UIImageView *mockImageView = mock([UIImageView class]);
+            [given(cellMock.sightImageView) willReturn:mockImageView];
+            block(cellMock, viewModel);
+            [verify(viewModel) picture];
+//            [verify(cellMock) sightImageView];
+            [verify(mockImageView) setImage:[argument capture]];
+            //[verify(cellMock) setSightImageView:[argument capture]];
+        });
     });
+
+
 
 
 

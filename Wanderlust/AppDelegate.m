@@ -15,10 +15,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+
     UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
     SightViewController * vc = (SightViewController *)nav.topViewController;
     SightViewModel *viewModel = [[SightViewModel alloc] init];
     viewModel.title = @"ViewModel";
+    viewModel.picture = [NSURL URLWithString:@"testImage.jpg"];
 
     vc.sightDataSource = [[SightDataSource alloc] initWithSights:@[viewModel]];
     vc.sight = viewModel;
