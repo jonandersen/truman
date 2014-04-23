@@ -7,7 +7,7 @@
 
 #import "Expecta.h"
 #import "SightViewCell.h"
-#import "SightViewController.h"
+#import "HomeViewController.h"
 
 SpecBegin(SightViewCellSpec)
 
@@ -16,9 +16,9 @@ describe(@"SightViewCell", ^{
 
     beforeEach(^{
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-        SightViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"SightViewController"];
+        HomeViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         [vc view];
-       sut =  [vc.tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
+        sut =  [vc.tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
     });
 
     it(@"should have an image view", ^{

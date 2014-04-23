@@ -1,10 +1,18 @@
-#import "SightViewModel.h"
+//
+// Created by Jon Andersen on 23/04/14.
+// Copyright (c) 2014 Jon Andersen. All rights reserved.
+//
 
-@class SightDataSource;
+#import <Foundation/Foundation.h>
 
-@interface SightViewController : UITableViewController
+@class SightViewModel;
+@class ImageService;
 
-@property(strong, nonatomic) SightViewModel *sight;
-@property(strong, nonatomic)  SightDataSource *sightDataSource;
 
+@interface SightViewController : UIViewController
+
+@property(nonatomic, strong) SightViewModel *sight;
+@property (weak, nonatomic) IBOutlet UIImageView *sightUIImageView;
+
+@property(nonatomic, strong) ImageService *imageService;
 @end

@@ -1,115 +1,61 @@
 #import <XCTest/XCTest.h>
-#import "Specta.h"
 
 #define MOCKITO_SHORTHAND
 
 #import <OCMockito/OCMockito.h>
 
-#define EXP_SHORTHAND
+#import "Specta.h"
 
+#define EXP_SHORTHAND
 #import "Expecta.h"
 
 #import "SightViewController.h"
-#import "SightViewCell.h"
-#import "UITableViewMock.h"
-#import "SightDataSource.h"
+#import "SightViewModel.h"
+#import "ImageService.h"
 
-SpecBegin(SightViewController)
+SpecBegin(SightViewControllerSpec)
 
-describe(@"SightViewController", ^{
+describe(@"SightViewControllerSpec", ^{
     __block SightViewController *sut;
-    __block SightViewModel *mockSight;
-    __block SightDataSource *mockDataSource;
+    __block SightViewModel *mockSightViewModel;
+    __block ImageService *mockImageService;
 
     beforeEach(^{
-        mockSight = mock([SightViewModel class]);
-        mockDataSource = mock([SightDataSource class]);
-
-        [given([mockSight valueForKeyPath:@"title"]) willReturn:@"Konigsee"];
+        mockSightViewModel = mock([SightViewModel class]);
+        mockImageService = mock([ImageService  class]);
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         sut = [storyboard instantiateViewControllerWithIdentifier:@"SightViewController"];
-        sut.sight = mockSight;
-        sut.sightDataSource = mockDataSource;
+
+        sut.sight = mockSightViewModel;
+        sut.imageService = mockImageService;
+
         [sut view];
+
+    });
+    
+    it(@"should have a imageservice property", ^{
+        expect(sut.imageService).toNot.beNil();
     });
 
-    it(@"should be instantiated from the storyboard", ^{
-        expect(sut).toNot.beNil();
-        expect(sut).to.beInstanceOf([SightViewController class]);
+    it(@"should have a sight set", ^{
+        expect(sut.sight).toNot.beNil();
     });
 
-
-
-    describe(@"navigation title", ^{
-
-        it(@"should be set to model", ^{
-            expect(sut.title).to.equal(@"Konigsee");
-
-        });
-
-        it(@"should have a SightDataSource property", ^{
-            expect(sut.sightDataSource).toNot.beNil();
-        });
+    it(@"should have a imageview", ^{
+        expect(sut.sightUIImageView).toNot.beNil();
     });
 
-    describe(@"table view", ^{
-        __block UITableViewMock *mockTableView;
+    it(@"should set image view to sight image", ^{
+        UIImage *mockImage = mock([UIImage class]);
+        NSURL *url = [NSURL URLWithString:@"testimage.jpg"];
+        [given([mockSightViewModel picture]) willReturn:url];
 
-        beforeEach(^{
-            mockTableView = [[UITableViewMock alloc] init];
-            [sut setTableView:mockTableView];
-            [sut viewDidLoad];
+        [given([mockImageService imageForUrl:url]) willReturn:mockImage];
 
-        });
-
-        it(@"should have a table view", ^{
-            expect(sut.tableView).to.equal(mockTableView);
-        });
-
-        it(@"should have table view delegate set", ^{
-            expect([mockTableView delegateSpy]).to.equal(mockDataSource);
-        });
-
-        it(@"should have a data source", ^{
-            expect([mockTableView dataSourceSpy]).to.equal(mockDataSource);
-        });
+        [sut viewDidLoad];
+        expect([sut.sightUIImageView image]).to.equal(mockImage);
     });
-
-    describe(@"Configure SightViewCell", ^{
-        __block SightViewCell *cellMock;
-        __block SightViewModel *viewModel;
-        __block MKTArgumentCaptor *argument;
-        __block BannerTableViewCellConfigureBlock block;
-
-        beforeEach(^{
-            argument = [[MKTArgumentCaptor alloc] init];
-            cellMock = mock([SightViewCell class]);
-            viewModel = mock([SightViewModel class]);
-            [sut.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-            [verify(mockDataSource) setSightConfigure:[argument capture]];
-            block = [argument value];
-        });
-
-        it(@"should set title", ^{
-            block(cellMock, viewModel);
-            [verify(viewModel) title];
-            [verify(cellMock) titleLabel];
-
-        });
-
-        it(@"should set image", ^{
-            UIImageView *mockImageView = mock([UIImageView class]);
-            [given(cellMock.sightImageView) willReturn:mockImageView];
-            block(cellMock, viewModel);
-            [verify(viewModel) picture];
-//            [verify(cellMock) sightImageView];
-            [verify(mockImageView) setImage:[argument capture]];
-            //[verify(cellMock) setSightImageView:[argument capture]];
-        });
-    });
-
-
 
 
 

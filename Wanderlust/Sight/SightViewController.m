@@ -1,41 +1,18 @@
 #import "SightViewController.h"
-#import "SightDataSource.h"
+#import "SightViewModel.h"
+#import "ImageService.h"
 
-@implementation SightViewController
+@implementation SightViewController {
 
-- (void)dealloc {
-    self.sightDataSource = nil;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [RACObserve(self, sight.title) subscribeNext:^(NSString*  title) {
-        self.title = title;
-    }];
-    self.sightDataSource.sightConfigure = ^(SightViewCell *cell, SightViewModel *sight ){
-        cell.titleLabel.text = sight.title;
-        cell.sightImageView.image = [UIImage imageNamed:[sight.picture absoluteString]];
-    };
-    self.tableView.delegate = self.sightDataSource;
-    self.tableView.dataSource = self.sightDataSource;
-    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
-
-    // Do any additional setup after loading the view.
+- (void)viewDidLoad {
+    UIImage *image = [self.imageService imageForUrl:self.sight.picture];
+    self.sightUIImageView.image = image;
 }
 
-
-
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void) dealloc{
+    self.sight = nil;
+    self.imageService = nil;
 }
-*/
-
 @end

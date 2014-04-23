@@ -6,7 +6,7 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
-#import "SightViewController.h"
+#import "HomeViewController.h"
 #import "Registry.h"
 
 SpecBegin(RegistrySpec)

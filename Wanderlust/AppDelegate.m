@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SightViewController.h"
+#import "HomeViewController.h"
 #import "SightDataSource.h"
 #import "Registry.h"
 
@@ -20,7 +20,7 @@
     Registry *registry = [[Registry alloc] init];
 
     UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
-    SightViewController * vc = (SightViewController *)nav.topViewController;
+    HomeViewController * vc = (HomeViewController *)nav.topViewController;
 
 
 //    SightViewModel *viewModel = [[SightViewModel alloc] init];
