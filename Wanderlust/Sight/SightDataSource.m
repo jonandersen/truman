@@ -1,18 +1,24 @@
 #import "SightDataSource.h"
+#import "DataAccessStore.h"
 
 @interface SightDataSource ()
 
     @property (strong, nonatomic) NSArray *sights;
     @property (strong, nonatomic) SightViewCell *sightViewCell;
+    @property (nonatomic, strong) DataAccessStore* dataAccessStore;
 
 @end
 
 @implementation SightDataSource
 
+- (instancetype)init {
+    return nil;
+}
 
-- (instancetype) initWithSights:(NSArray *)sights{
+- (instancetype) initWithStore:(DataAccessStore *)dataAccessStore {
     if (self  = [super init]) {
-        self.sights = sights;
+        self.dataAccessStore = dataAccessStore;
+        self.sights = [self.dataAccessStore sightViewModels];
     }
     return self;
 }
@@ -20,6 +26,7 @@
 - (void) dealloc {
     self.sights = nil;
     self.sightViewCell = nil;
+    self.dataAccessStore = nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {

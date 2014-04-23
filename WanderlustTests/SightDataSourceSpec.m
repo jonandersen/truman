@@ -10,6 +10,7 @@
 #define EXP_SHORTHAND
 
 #import "Expecta.h"
+#import "DataAccessStore.h"
 
 SpecBegin(SightDataSource)
 
@@ -20,12 +21,21 @@ describe(@"SightDataSource ", ^{
     __block BOOL configuredCell;
     __block SightViewModel *viewModelFromBlock;
     __block NSArray* mockSights;
+    __block DataAccessStore* mockDataAccessStore;
 
     beforeEach(^{
         mockSights = mock([NSArray class]);
-        sut = [[SightDataSource alloc] initWithSights:mockSights];
         tableView = mock([UITableView class]);
         cell = mock([SightViewCell class]);
+        mockDataAccessStore = mock([DataAccessStore class]);
+
+        //Mock out the sights
+        [given([mockDataAccessStore sightViewModels]) willReturn:mockSights];
+
+
+        //System under test
+        sut = [[SightDataSource alloc] initWithStore:mockDataAccessStore];
+
 
         //Cell configuration
         configuredCell = NO;
@@ -36,6 +46,10 @@ describe(@"SightDataSource ", ^{
 
     });
 
+    it(@"should not allow creation without a store", ^{
+        expect([[SightDataSource alloc] init]).to.beNil();
+    });
+
     it(@"should conform to UITableViewDataSource", ^{
         expect(sut).to.conformTo(@protocol(UITableViewDataSource));
     });
@@ -44,15 +58,14 @@ describe(@"SightDataSource ", ^{
         expect(sut).to.conformTo(@protocol(UITableViewDelegate));
     });
 
-//    it(@"should have a SightConfigureBlock", ^{
-//        expect(sut.sights).toNot.beNil;
-//    });
+    it(@"should have a SightConfigureBlock", ^{
+        expect(sut.sightConfigure).toNot.beNil();
+    });
 
 
     describe(@"numberOfSectionsInTableView", ^{
         it(@"should have as many as sights", ^{
-            [given([mockSights count]) willReturn:
-            [NSNumber numberWithInt:2]];
+            [given([mockSights count]) willReturn:[NSNumber numberWithInt:2]];
             NSInteger rows = [sut numberOfSectionsInTableView:tableView];
             expect(rows).to.equal([mockSights count]);
         });
@@ -65,8 +78,12 @@ describe(@"SightDataSource ", ^{
             [sut tableView:tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             [verify(cell) height];
         });
+    });
 
-
+    describe(@"data access", ^{
+        it(@"should ask DataAccessStore for Sights", ^{
+            [verify(mockDataAccessStore) sightViewModels];
+        });
     });
 
 

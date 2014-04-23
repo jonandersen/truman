@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SightViewController.h"
 #import "SightDataSource.h"
+#import "Registry.h"
 
 @implementation AppDelegate
 
@@ -16,18 +17,21 @@
 {
     // Override point for customization after application launch.
 
+    Registry *registry = [[Registry alloc] init];
+
     UINavigationController *nav = (UINavigationController*)self.window.rootViewController;
     SightViewController * vc = (SightViewController *)nav.topViewController;
-    SightViewModel *viewModel = [[SightViewModel alloc] init];
-    viewModel.title = @"ViewModel";
-    viewModel.picture = [NSURL URLWithString:@"testImage.jpg"];
-    
-    SightViewModel *viewModel2 = [[SightViewModel alloc] init];
-    viewModel2.title = @"ViewModel2";
-    viewModel2.picture = [NSURL URLWithString:@"testImage.jpg"];
 
-    vc.sightDataSource = [[SightDataSource alloc] initWithSights:@[viewModel, viewModel2]];
-    vc.sight = viewModel;
+
+//    SightViewModel *viewModel = [[SightViewModel alloc] init];
+//    viewModel.title = @"ViewModel";
+//    viewModel.picture = [NSURL URLWithString:@"testImage.jpg"];
+//
+//    SightViewModel *viewModel2 = [[SightViewModel alloc] init];
+//    viewModel2.title = @"ViewModel2";
+//    viewModel2.picture = [NSURL URLWithString:@"testImage.jpg"];
+
+    vc.sightDataSource = [registry sightDataSource];
     return YES;
 }
 							
