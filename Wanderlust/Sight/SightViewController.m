@@ -16,11 +16,10 @@
     self.sightDataSource.sightConfigure = ^(SightViewCell *cell, SightViewModel *sight ){
         cell.titleLabel.text = sight.title;
         cell.sightImageView.image = [UIImage imageNamed:[sight.picture absoluteString]];
-        cell.sightImageView.contentMode = UIViewContentModeScaleAspectFit;
-
     };
     self.tableView.delegate = self.sightDataSource;
     self.tableView.dataSource = self.sightDataSource;
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     // Do any additional setup after loading the view.
 }
