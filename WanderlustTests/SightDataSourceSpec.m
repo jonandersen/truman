@@ -73,7 +73,6 @@ describe(@"SightDataSource ", ^{
 
     describe(@"height calcuation", ^{
         it(@"should use the height for the cell", ^{
-
             [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier]) willReturn:cell];
             [sut tableView:tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             [verify(cell) height];
@@ -108,10 +107,16 @@ describe(@"SightDataSource ", ^{
             SightViewModel *viewModel = mock([SightViewModel class]);
             [given([mockSights objectAtIndex:0]) willReturn:viewModel];
 
-            [given([tableView dequeueReusableCellWithIdentifier:@"SightCell"]) willReturn:cell];
-
             [sut tableView:tableView cellForRowAtIndexPath:index];
 
+            expect(viewModelFromBlock).to.equal(viewModel);
+        });
+
+        it(@"should provide a sight for the section index", ^{
+            SightViewModel *viewModel = mock([SightViewModel class]);
+            [given([mockSights objectAtIndex:1]) willReturn:viewModel];
+
+            [sut tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];
 
             expect(viewModelFromBlock).to.equal(viewModel);
         });

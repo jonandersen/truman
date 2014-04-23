@@ -48,7 +48,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     SightViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
-    SightViewModel *sight = [self.sights objectAtIndex:(NSUInteger) [indexPath row]];
+    SightViewModel *sight = [self.sights objectAtIndex:(NSUInteger) [indexPath section]];
     self.sightConfigure(cell, sight);
 
     return cell;

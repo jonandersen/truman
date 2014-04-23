@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		052A2DE1037F4FBDBD5B71E1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 73705C8A1CC24B26BF57BE3F /* libPods.a */; };
-		0588BC8D1906FC1400EA73C8 /* testImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0588BC8C1906FC1400EA73C8 /* testImage.jpg */; };
+		0588BC8D1906FC1400EA73C8 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0588BC8C1906FC1400EA73C8 /* 1.jpg */; };
 		058C698C18FF0B380031F618 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698B18FF0B380031F618 /* Foundation.framework */; };
 		058C698E18FF0B380031F618 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698D18FF0B380031F618 /* CoreGraphics.framework */; };
 		058C699018FF0B380031F618 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 058C698F18FF0B380031F618 /* UIKit.framework */; };
@@ -26,16 +26,22 @@
 		058C69CE18FF0B660031F618 /* SightDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69CC18FF0B660031F618 /* SightDataSourceSpec.m */; };
 		058C69CF18FF0B660031F618 /* SightViewControllerSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 058C69CD18FF0B660031F618 /* SightViewControllerSpec.m */; };
 		4E603C222BE64C73A413B04D /* libPods-WanderlustTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F24267DFDA254621B782269F /* libPods-WanderlustTests.a */; };
+		F9AAB02E99B9A57C5CF6D0FC /* 0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9AAB444D95039467548A0F6 /* 0.jpg */; };
 		F9AAB0A6DA25944B66EF20FD /* DataAccessStore.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB5F192C0B713F002DBBE /* DataAccessStore.m */; };
 		F9AAB2838548A27D8AE6A259 /* Registry.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABD09F73AE50D40C78B98 /* Registry.m */; };
+		F9AAB2EC8C2E7D5B51D7FEEB /* 4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9AABB687DA15D6772A84395 /* 4.jpg */; };
+		F9AAB2FA3BAA7A6CF7B04B28 /* 03029_ladyblue_1920x1200.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9AAB4AA9C25D17B22E73312 /* 03029_ladyblue_1920x1200.jpg */; };
 		F9AAB40C08709D090CF7A7F7 /* SightDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB91049A796B151D64506 /* SightDataSource.m */; };
 		F9AAB5330863DE9E8D646FBF /* RegistrySpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABE353261484885F5EC58 /* RegistrySpec.m */; };
+		F9AAB62B5858509862C51453 /* 03030_darkgooseisland_1920x1200.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9AABC27EB3FA3F9E72026CB /* 03030_darkgooseisland_1920x1200.jpg */; };
 		F9AAB63F883BBB36C3CA92E6 /* DataAccessStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB6307883EE1996DE59BA /* DataAccessStoreSpec.m */; };
 		F9AAB651565770D4810DF36B /* UITableViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */; };
 		F9AAB6926A89E0CB3AF23EF2 /* SightViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB3C95BA2C74ECE755324 /* SightViewModelSpec.m */; };
 		F9AABABFAE69889A040437D9 /* SightViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB16F24E3319A715AE138 /* SightViewController.m */; };
 		F9AABB0C7B5FD7CB8E56CD67 /* SightViewCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB2F30622ADE9FF61B91F /* SightViewCellSpec.m */; };
 		F9AABC2587ED6A0A12BC5D67 /* AppDelegateSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABBEE76C268B64D3200E0 /* AppDelegateSpec.m */; };
+		F9AABD3E2B7F2F5D6535255A /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9AABA662ACAA8898395477D /* 3.jpg */; };
+		F9AABDCBD909A94530848A05 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9AAB12C571AE4E838217CC6 /* 2.jpg */; };
 		F9AABEAB81B11D6FCD0BB83C /* SightViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABF38C75175267D6A5A51 /* SightViewModel.m */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0588BC8C1906FC1400EA73C8 /* testImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = testImage.jpg; path = ../testImage.jpg; sourceTree = "<group>"; };
+		0588BC8C1906FC1400EA73C8 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 1.jpg; path = ../1.jpg; sourceTree = "<group>"; };
 		058C698818FF0B380031F618 /* Wanderlust.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wanderlust.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		058C698B18FF0B380031F618 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		058C698D18FF0B380031F618 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -78,16 +84,22 @@
 		F24267DFDA254621B782269F /* libPods-WanderlustTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WanderlustTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewMock.m; sourceTree = "<group>"; };
 		F9AAB0A7758991B80D1B1145 /* Registry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Registry.h; sourceTree = "<group>"; };
+		F9AAB12C571AE4E838217CC6 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		F9AAB16F24E3319A715AE138 /* SightViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewController.m; sourceTree = "<group>"; };
 		F9AAB2F30622ADE9FF61B91F /* SightViewCellSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewCellSpec.m; sourceTree = "<group>"; };
 		F9AAB3C95BA2C74ECE755324 /* SightViewModelSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightViewModelSpec.m; sourceTree = "<group>"; };
 		F9AAB3DBB35EECC58ABCF962 /* DataAccessStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccessStore.h; sourceTree = "<group>"; };
+		F9AAB444D95039467548A0F6 /* 0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 0.jpg; sourceTree = "<group>"; };
+		F9AAB4AA9C25D17B22E73312 /* 03029_ladyblue_1920x1200.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03029_ladyblue_1920x1200.jpg; sourceTree = "<group>"; };
 		F9AAB5F192C0B713F002DBBE /* DataAccessStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccessStore.m; sourceTree = "<group>"; };
 		F9AAB6307883EE1996DE59BA /* DataAccessStoreSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataAccessStoreSpec.m; sourceTree = "<group>"; };
 		F9AAB67153552A605B79C71A /* SightViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightViewController.h; sourceTree = "<group>"; };
 		F9AAB881269D1125BC830C1E /* UITableViewMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewMock.h; sourceTree = "<group>"; };
 		F9AAB91049A796B151D64506 /* SightDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SightDataSource.m; sourceTree = "<group>"; };
+		F9AABA662ACAA8898395477D /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		F9AABB687DA15D6772A84395 /* 4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 4.jpg; sourceTree = "<group>"; };
 		F9AABBEE76C268B64D3200E0 /* AppDelegateSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateSpec.m; sourceTree = SOURCE_ROOT; };
+		F9AABC27EB3FA3F9E72026CB /* 03030_darkgooseisland_1920x1200.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 03030_darkgooseisland_1920x1200.jpg; sourceTree = "<group>"; };
 		F9AABCEA2AC26E08D8E4B9B1 /* SightViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SightViewModel.h; sourceTree = "<group>"; };
 		F9AABD09F73AE50D40C78B98 /* Registry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Registry.m; sourceTree = "<group>"; };
 		F9AABE353261484885F5EC58 /* RegistrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrySpec.m; sourceTree = "<group>"; };
@@ -124,7 +136,13 @@
 		0588BC8E1906FC2900EA73C8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0588BC8C1906FC1400EA73C8 /* testImage.jpg */,
+				0588BC8C1906FC1400EA73C8 /* 1.jpg */,
+				F9AABB687DA15D6772A84395 /* 4.jpg */,
+				F9AAB12C571AE4E838217CC6 /* 2.jpg */,
+				F9AAB444D95039467548A0F6 /* 0.jpg */,
+				F9AAB4AA9C25D17B22E73312 /* 03029_ladyblue_1920x1200.jpg */,
+				F9AABA662ACAA8898395477D /* 3.jpg */,
+				F9AABC27EB3FA3F9E72026CB /* 03030_darkgooseisland_1920x1200.jpg */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -314,11 +332,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0588BC8D1906FC1400EA73C8 /* testImage.jpg in Resources */,
+				0588BC8D1906FC1400EA73C8 /* 1.jpg in Resources */,
 				058C69A218FF0B380031F618 /* Main_iPad.storyboard in Resources */,
 				058C69A718FF0B380031F618 /* Images.xcassets in Resources */,
 				058C699F18FF0B380031F618 /* Main_iPhone.storyboard in Resources */,
 				058C699618FF0B380031F618 /* InfoPlist.strings in Resources */,
+				F9AAB2EC8C2E7D5B51D7FEEB /* 4.jpg in Resources */,
+				F9AABDCBD909A94530848A05 /* 2.jpg in Resources */,
+				F9AAB02E99B9A57C5CF6D0FC /* 0.jpg in Resources */,
+				F9AAB2FA3BAA7A6CF7B04B28 /* 03029_ladyblue_1920x1200.jpg in Resources */,
+				F9AABD3E2B7F2F5D6535255A /* 3.jpg in Resources */,
+				F9AAB62B5858509862C51453 /* 03030_darkgooseisland_1920x1200.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

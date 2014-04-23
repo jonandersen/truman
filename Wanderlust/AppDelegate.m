@@ -25,11 +25,8 @@
 
 //    SightViewModel *viewModel = [[SightViewModel alloc] init];
 //    viewModel.title = @"ViewModel";
-//    viewModel.picture = [NSURL URLWithString:@"testImage.jpg"];
+//    viewModel.picture = [NSURL URLWithString:@"1.jpg"];
 //
-//    SightViewModel *viewModel2 = [[SightViewModel alloc] init];
-//    viewModel2.title = @"ViewModel2";
-//    viewModel2.picture = [NSURL URLWithString:@"testImage.jpg"];
 
     vc.sightDataSource = [registry sightDataSource];
     return YES;
