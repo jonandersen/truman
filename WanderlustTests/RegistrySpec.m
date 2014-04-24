@@ -22,6 +22,10 @@ describe(@"RegistrySpec", ^{
         expect([sut sightDataSource]).toNot.beNil();
     });
 
+    it(@"should provide a ImageService", ^{
+        expect([sut imageService]).toNot.beNil();
+    });
+
 
 
 });

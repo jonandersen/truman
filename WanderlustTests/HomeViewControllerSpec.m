@@ -13,6 +13,8 @@
 #import "SightViewCell.h"
 #import "UITableViewMock.h"
 #import "SightDataSource.h"
+#import "SightViewController.h"
+#import "ImageService.h"
 
 SpecBegin(HomeViewControllerSpec)
 
@@ -39,6 +41,15 @@ describe(@"HomeViewController", ^{
         expect(sut).to.beInstanceOf([HomeViewController class]);
     });
 
+    it(@"should have a SightDataSource property", ^{
+        expect(sut.sightDataSource).toNot.beNil();
+    });
+
+    it(@"should have an ImageService property", ^{
+        sut.imageService = mock([ImageService class]);
+        expect(sut.imageService).toNot.beNil();
+    });
+
 
 
     describe(@"navigation title", ^{
@@ -48,9 +59,6 @@ describe(@"HomeViewController", ^{
 
         });
 
-        it(@"should have a SightDataSource property", ^{
-            expect(sut.sightDataSource).toNot.beNil();
-        });
     });
 
     describe(@"table view", ^{
@@ -111,8 +119,37 @@ describe(@"HomeViewController", ^{
 
 
     describe(@"navigation", ^{
+        it(@"should set imageservice to new view controller", ^{
+            ImageService *imageService = mock([ImageService class]);
+            SightViewController *sightViewController = mock([SightViewController class]);
+            sut.imageService = imageService;
+
+            UIStoryboardSegue *segue = [UIStoryboardSegue segueWithIdentifier:@"SightViewControllerPush" source:sut destination:sightViewController performHandler:^{
+                // do nothing here
+            }];
+
+            [sut prepareForSegue:segue sender:self];
+
+            [verify(sightViewController) setImageService:imageService];
+
+        });
+
         it(@"should navigate to new view controller when selecting sight", ^{
-            //sut did
+            NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:1];
+            SightViewController *sightViewController = mock([SightViewController class]);
+            SightViewModel *sightViewModel = mock([SightViewModel class]);
+            [given([mockDataSource sightForIndexPath:index]) willReturn:sightViewModel];
+
+            [sut.tableView selectRowAtIndexPath:index animated:NO scrollPosition:nil];
+
+            UIStoryboardSegue *segue = [UIStoryboardSegue segueWithIdentifier:@"SightViewControllerPush" source:sut destination:sightViewController performHandler:^{
+                // do nothing here
+            }];
+
+            [sut prepareForSegue:segue sender:self];
+
+            [verify(sightViewController) setSight:sightViewModel];
+
         });
     });
 

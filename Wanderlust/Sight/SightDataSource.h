@@ -13,5 +13,5 @@ typedef void (^BannerTableViewCellConfigureBlock)(SightViewCell *cell, SightView
 - (instancetype) initWithStore:(DataAccessStore *)dataAccessStore;
 
 
-
+- (SightViewModel *)sightForIndexPath:(NSIndexPath *)indexPath;
 @end

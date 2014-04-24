@@ -8,4 +8,5 @@
 @property(strong, nonatomic)  SightDataSource *sightDataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property(nonatomic, strong) id imageService;
 @end

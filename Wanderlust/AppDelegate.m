@@ -29,6 +29,7 @@
 //
 
     vc.sightDataSource = [registry sightDataSource];
+    vc.imageService = [registry imageService];
     return YES;
 }
 							

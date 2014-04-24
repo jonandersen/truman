@@ -1,5 +1,6 @@
 #import "HomeViewController.h"
 #import "SightDataSource.h"
+#import "SightViewController.h"
 
 @implementation HomeViewController
 
@@ -27,7 +28,7 @@
 
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -35,7 +36,11 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    SightViewModel *sightViewModel =  [self.sightDataSource sightForIndexPath:[self.tableView indexPathForSelectedRow]];
+    SightViewController *sightViewController =[segue destinationViewController];
+    sightViewController.sight = sightViewModel;
+    sightViewController.imageService = self.imageService;
 }
-*/
+
 
 @end

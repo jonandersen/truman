@@ -36,9 +36,14 @@ describe(@"AppDelegate", ^{
 
     it(@"should have a datasource set", ^{
         UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
-        HomeViewController *sightViewController = (HomeViewController *)vc.topViewController;
-        expect(sightViewController.sightDataSource).toNot.beNil();
+        HomeViewController *homeViewController = (HomeViewController *)vc.topViewController;
+        expect(homeViewController.sightDataSource).toNot.beNil();
+    });
 
+    it(@"should have imageservice set", ^{
+        UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
+        HomeViewController *homeViewController = (HomeViewController *)vc.topViewController;
+        expect(homeViewController.imageService).toNot.beNil();
     });
 
 

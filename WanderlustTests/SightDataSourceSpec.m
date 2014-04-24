@@ -85,6 +85,15 @@ describe(@"SightDataSource ", ^{
         });
     });
 
+    describe(@"sight for indexPath", ^{
+        it(@"should return a sight for the indexpath", ^{
+            SightViewModel *sightViewModel = mock([SightViewModel class]);
+            [given([mockSights objectAtIndex:2]) willReturn:sightViewModel];
+            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:2];
+            expect([sut sightForIndexPath:indexPath]).to.equal(sightViewModel);
+        });
+    });
+
 
     describe(@"cellForRowAtIndexPath", ^{
         NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];

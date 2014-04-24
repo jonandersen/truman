@@ -23,12 +23,12 @@
         <scene sceneID="YzO-oe-BcR">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="VSK-6Q-99W" customClass="HomeViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="mdv-oX-vDC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="160" sectionHeaderHeight="10" sectionFooterHeight="10" id="mdv-oX-vDC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SightCell" rowHeight="160" id="TkJ-e6-7kv" customClass="SightViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SightCell" rowHeight="160" id="TkJ-e6-7kv" customClass="SightViewCell">
                                 <rect key="frame" x="0.0" y="119" width="320" height="160"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TkJ-e6-7kv" id="WZZ-UH-cM5">
@@ -36,7 +36,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NSN-wy-zDh">
-                                            <rect key="frame" x="10" y="-1" width="300" height="160"/>
+                                            <rect key="frame" x="10" y="0.0" width="300" height="160"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cV5-W8-fGC">
@@ -66,7 +66,7 @@
                                 <connections>
                                     <outlet property="sightImageView" destination="cV5-W8-fGC" id="nF2-aX-Pco"/>
                                     <outlet property="titleLabel" destination="oOe-QH-zKs" id="LKc-6c-hr7"/>
-                                    <segue destination="kp1-ye-CK5" kind="push" id="Lto-Gn-ub2"/>
+                                    <segue destination="kp1-ye-CK5" kind="push" identifier="SightViewControllerPush" id="hci-5r-NEI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

@@ -35,8 +35,8 @@
 }
 
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0;
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -67,4 +67,7 @@
     return self.sightViewCell;
 }
 
+- (SightViewModel *)sightForIndexPath:(NSIndexPath *)indexPath {
+    return [[self sights] objectAtIndex:(NSUInteger) [indexPath section]];
+}
 @end
