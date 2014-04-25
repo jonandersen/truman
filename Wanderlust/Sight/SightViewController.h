@@ -4,15 +4,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <SwipeView/SwipeView.h>
 
 @class SightViewModel;
 @class ImageService;
+@class SwipeView;
+@class SwipeViewDataSource;
 
 
 @interface SightViewController : UIViewController
 
 @property(nonatomic, strong) SightViewModel *sight;
-@property (weak, nonatomic) IBOutlet UIImageView *sightUIImageView;
+@property (weak, nonatomic) IBOutlet SwipeView *swipeView;
+
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property(nonatomic, strong) ImageService *imageService;
+@property(nonatomic, strong) SwipeViewDataSource *swipeViewDataSource;
 @end

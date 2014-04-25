@@ -109,7 +109,7 @@ describe(@"SightDataSource ", ^{
 
             [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier]) willReturn:cell];
             [sut tableView:tableView cellForRowAtIndexPath:index];
-            expect(configuredCell).to.beTruthy;
+            expect(configuredCell).to.beTruthy();
         });
 
         it(@"should provide a sight in the configure block", ^{

@@ -16,6 +16,8 @@
         SightViewModel* viewModel = [[SightViewModel alloc] init];
         viewModel.title = [NSString stringWithFormat:@"ViewModel%i",i];
         viewModel.picture = [NSURL URLWithString:[NSString stringWithFormat:@"%i.jpg",i]];
+        viewModel.country = @"Germany";
+        viewModel.region = @"Bavaria";
         [sightModels addObject:viewModel];
     }
 

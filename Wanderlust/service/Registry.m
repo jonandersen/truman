@@ -2,6 +2,7 @@
 #import "SightDataSource.h"
 #import "DataAccessStore.h"
 #import "ImageService.h"
+#import "SwipeViewDataSource.h"
 
 
 @implementation Registry {
@@ -14,6 +15,10 @@
 
 - (ImageService *)imageService {
     return [[ImageService alloc] init];
+}
+
+- (SwipeViewDataSource *)swipeViewDataSource {
+    return [[SwipeViewDataSource alloc] initWithImages:nil];
 }
 
 

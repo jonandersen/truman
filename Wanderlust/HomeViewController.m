@@ -1,6 +1,8 @@
 #import "HomeViewController.h"
 #import "SightDataSource.h"
 #import "SightViewController.h"
+#import "ImageService.h"
+#import "Registry.h"
 
 @implementation HomeViewController
 
@@ -14,9 +16,10 @@
     [RACObserve(self, sight.title) subscribeNext:^(NSString*  title) {
         self.title = title;
     }];
+    __weak HomeViewController* weakSelf = self;
     self.sightDataSource.sightConfigure = ^(SightViewCell *cell, SightViewModel *sight ){
         cell.titleLabel.text = sight.title;
-        cell.sightImageView.image = [UIImage imageNamed:[sight.picture absoluteString]];
+        cell.sightImageView.image = [weakSelf.imageService imageForUrl:sight.picture];
     };
     self.tableView.delegate = self.sightDataSource;
     self.tableView.dataSource = self.sightDataSource;
@@ -40,6 +43,7 @@
     SightViewController *sightViewController =[segue destinationViewController];
     sightViewController.sight = sightViewModel;
     sightViewController.imageService = self.imageService;
+    sightViewController.swipeViewDataSource = [self.registry swipeViewDataSource];
 }
 
 

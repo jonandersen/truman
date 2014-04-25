@@ -15,6 +15,8 @@
 #import "SightDataSource.h"
 #import "SightViewController.h"
 #import "ImageService.h"
+#import "Registry.h"
+#import "SwipeViewDataSource.h"
 
 SpecBegin(HomeViewControllerSpec)
 
@@ -22,10 +24,12 @@ describe(@"HomeViewController", ^{
     __block HomeViewController *sut;
     __block SightViewModel *mockSight;
     __block SightDataSource *mockDataSource;
+    __block Registry *mockRegistry;
 
     beforeEach(^{
         mockSight = mock([SightViewModel class]);
         mockDataSource = mock([SightDataSource class]);
+        mockRegistry = mock([Registry class]);
 
         [given([mockSight valueForKeyPath:@"title"]) willReturn:@"Konigsee"];
 
@@ -33,6 +37,7 @@ describe(@"HomeViewController", ^{
         sut = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         sut.sight = mockSight;
         sut.sightDataSource = mockDataSource;
+        sut.registry = mockRegistry;
         [sut view];
     });
 
@@ -48,6 +53,10 @@ describe(@"HomeViewController", ^{
     it(@"should have an ImageService property", ^{
         sut.imageService = mock([ImageService class]);
         expect(sut.imageService).toNot.beNil();
+    });
+
+    it(@"should have a registry property", ^{
+        expect(sut.registry).toNot.beNil();
     });
 
 
@@ -106,27 +115,32 @@ describe(@"HomeViewController", ^{
 
         });
 
+
         it(@"should set image", ^{
             UIImageView *mockImageView = mock([UIImageView class]);
             [given(cellMock.sightImageView) willReturn:mockImageView];
             block(cellMock, viewModel);
             [verify(viewModel) picture];
-//            [verify(cellMock) sightImageView];
             [verify(mockImageView) setImage:[argument capture]];
-            //[verify(cellMock) setSightImageView:[argument capture]];
         });
     });
 
 
-    describe(@"navigation", ^{
-        it(@"should set imageservice to new view controller", ^{
-            ImageService *imageService = mock([ImageService class]);
-            SightViewController *sightViewController = mock([SightViewController class]);
-            sut.imageService = imageService;
+    describe(@"navigation segue", ^{
+        __block SightViewController *sightViewController;
+        __block UIStoryboardSegue *segue;
 
-            UIStoryboardSegue *segue = [UIStoryboardSegue segueWithIdentifier:@"SightViewControllerPush" source:sut destination:sightViewController performHandler:^{
+        beforeEach(^{
+            sightViewController = mock([SightViewController class]);
+            segue = [UIStoryboardSegue segueWithIdentifier:@"SightViewControllerPush" source:sut destination:sightViewController performHandler:^{
                 // do nothing here
             }];
+        });
+
+        it(@"should set imageservice to new view controller", ^{
+            ImageService *imageService = mock([ImageService class]);
+            sut.imageService = imageService;
+
 
             [sut prepareForSegue:segue sender:self];
 
@@ -134,17 +148,24 @@ describe(@"HomeViewController", ^{
 
         });
 
+        it(@"shold set the SwipeViewDataSource", ^{
+            SwipeViewDataSource *mockSwipeViewDataSource = mock([SwipeViewDataSource class]);
+            [given([mockRegistry swipeViewDataSource]) willReturn:mockSwipeViewDataSource];
+
+
+            [sut prepareForSegue:segue sender:self];
+
+            [verify(sightViewController) setSwipeViewDataSource:mockSwipeViewDataSource];
+
+
+        });
+
         it(@"should navigate to new view controller when selecting sight", ^{
             NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:1];
-            SightViewController *sightViewController = mock([SightViewController class]);
             SightViewModel *sightViewModel = mock([SightViewModel class]);
             [given([mockDataSource sightForIndexPath:index]) willReturn:sightViewModel];
 
-            [sut.tableView selectRowAtIndexPath:index animated:NO scrollPosition:nil];
-
-            UIStoryboardSegue *segue = [UIStoryboardSegue segueWithIdentifier:@"SightViewControllerPush" source:sut destination:sightViewController performHandler:^{
-                // do nothing here
-            }];
+            [sut.tableView selectRowAtIndexPath:index animated:NO scrollPosition:UITableViewScrollPositionNone];
 
             [sut prepareForSegue:segue sender:self];
 

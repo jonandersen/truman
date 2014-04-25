@@ -39,6 +39,7 @@
 		F9AAB63F883BBB36C3CA92E6 /* DataAccessStoreSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB6307883EE1996DE59BA /* DataAccessStoreSpec.m */; };
 		F9AAB651565770D4810DF36B /* UITableViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */; };
 		F9AAB6926A89E0CB3AF23EF2 /* SightViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB3C95BA2C74ECE755324 /* SightViewModelSpec.m */; };
+		F9AAB6B3AD763E47F700F0DB /* SwipeViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB0F0F603CBDEC6A6AD98 /* SwipeViewDataSourceSpec.m */; };
 		F9AAB875B25FB54656627802 /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABEA410241A5260EB2CA8 /* ImageService.m */; };
 		F9AABA0A08245CBEDCD26D2D /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9AAB0FD081FE75B58141734 /* Main_iPad.storyboard */; };
 		F9AABB0C7B5FD7CB8E56CD67 /* SightViewCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB2F30622ADE9FF61B91F /* SightViewCellSpec.m */; };
@@ -48,6 +49,7 @@
 		F9AABDCBD909A94530848A05 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F9AAB12C571AE4E838217CC6 /* 2.jpg */; };
 		F9AABE14DD572F2EC994FF2C /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABC4B6C895DF0F6B664A8 /* HomeViewController.m */; };
 		F9AABEAB81B11D6FCD0BB83C /* SightViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABF38C75175267D6A5A51 /* SightViewModel.m */; };
+		F9AABFF3816ECD8169D6A682 /* SwipeViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB06926F53B2A424107E5 /* SwipeViewDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		F24267DFDA254621B782269F /* libPods-WanderlustTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WanderlustTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewMock.m; sourceTree = "<group>"; };
 		F9AAB03272423AEA99DBF202 /* ImagServiceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagServiceSpec.m; sourceTree = "<group>"; };
+		F9AAB06157287FDAA1D2013C /* SwipeViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewDataSource.h; sourceTree = "<group>"; };
+		F9AAB06926F53B2A424107E5 /* SwipeViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewDataSource.m; sourceTree = "<group>"; };
+		F9AAB0F0F603CBDEC6A6AD98 /* SwipeViewDataSourceSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewDataSourceSpec.m; sourceTree = "<group>"; };
 		F9AAB129851D461E329BCA82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Wanderlust/Base.lproj/Main_iPad.storyboard; sourceTree = SOURCE_ROOT; };
 		F9AAB12C571AE4E838217CC6 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
 		F9AAB17032EFCAB460DC3168 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Wanderlust/Base.lproj/Main_iPhone.storyboard; sourceTree = SOURCE_ROOT; };
@@ -208,6 +213,8 @@
 				F9AABC4B6C895DF0F6B664A8 /* HomeViewController.m */,
 				F9AABD978A92212934F24DBA /* view */,
 				F9AABC3427B3D63E07E9159E /* service */,
+				F9AAB06926F53B2A424107E5 /* SwipeViewDataSource.m */,
+				F9AAB06157287FDAA1D2013C /* SwipeViewDataSource.h */,
 			);
 			path = Wanderlust;
 			sourceTree = "<group>";
@@ -239,6 +246,7 @@
 				F9AABA639A4678F82373F9C4 /* SightViewControllerSpec.m */,
 				F9AAB03272423AEA99DBF202 /* ImagServiceSpec.m */,
 				F9AABE12486A0B8118A9BF82 /* testimage.jpg */,
+				F9AAB0F0F603CBDEC6A6AD98 /* SwipeViewDataSourceSpec.m */,
 			);
 			path = WanderlustTests;
 			sourceTree = "<group>";
@@ -470,6 +478,7 @@
 				F9AABD3C909516B25859E3AB /* Registry.m in Sources */,
 				F9AAB40119C9563453090582 /* SightViewController.m in Sources */,
 				F9AAB875B25FB54656627802 /* ImageService.m in Sources */,
+				F9AABFF3816ECD8169D6A682 /* SwipeViewDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +496,7 @@
 				F9AAB63F883BBB36C3CA92E6 /* DataAccessStoreSpec.m in Sources */,
 				F9AAB398691684C66FD5DD16 /* SightViewControllerSpec.m in Sources */,
 				F9AAB47E038CE79F9973874E /* ImagServiceSpec.m in Sources */,
+				F9AAB6B3AD763E47F700F0DB /* SwipeViewDataSourceSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +665,7 @@
 				INFOPLIST_FILE = "WanderlustTests/WanderlustTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -674,6 +685,7 @@
 				INFOPLIST_FILE = "WanderlustTests/WanderlustTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/Pods\"/**";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;

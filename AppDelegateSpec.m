@@ -29,22 +29,32 @@ describe(@"AppDelegate", ^{
         expect(sut.window.rootViewController).to.beInstanceOf([UINavigationController class]);
     });
 
-    it(@"should have sight view controller as first view", ^{
-        UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
-        expect(vc.topViewController).to.beInstanceOf([HomeViewController class]);
+    describe(@"root view controller", ^{
+        __block HomeViewController* homeViewController;
+        beforeEach(^{
+            UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
+            homeViewController = (HomeViewController *)vc.topViewController;
+        });
+
+        it(@"should have sight view controller as first view", ^{
+            UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
+            expect(vc.topViewController).to.beInstanceOf([HomeViewController class]);
+        });
+
+        it(@"should have a registry set", ^{
+            expect(homeViewController.registry).toNot.beNil();
+        });
+
+        it(@"should have a datasource set", ^{
+            expect(homeViewController.sightDataSource).toNot.beNil();
+        });
+
+        it(@"should have imageservice set", ^{
+            expect(homeViewController.imageService).toNot.beNil();
+        });
     });
 
-    it(@"should have a datasource set", ^{
-        UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
-        HomeViewController *homeViewController = (HomeViewController *)vc.topViewController;
-        expect(homeViewController.sightDataSource).toNot.beNil();
-    });
 
-    it(@"should have imageservice set", ^{
-        UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
-        HomeViewController *homeViewController = (HomeViewController *)vc.topViewController;
-        expect(homeViewController.imageService).toNot.beNil();
-    });
 
 
 });

@@ -1,6 +1,7 @@
 #import "SightViewModel.h"
 
 @class SightDataSource;
+@class Registry;
 
 @interface HomeViewController : UIViewController
 
@@ -9,4 +10,5 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property(nonatomic, strong) id imageService;
+@property(nonatomic, strong) Registry *registry;
 @end

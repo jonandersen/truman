@@ -26,7 +26,9 @@ describe(@"RegistrySpec", ^{
         expect([sut imageService]).toNot.beNil();
     });
 
-
+    it(@"should provide a SwipeViewDataSource", ^{
+        expect([sut swipeViewDataSource]).toNot.beNil();
+    });
 
 });
 
