@@ -6,19 +6,19 @@
 #define EXP_SHORTHAND
 
 #import "Expecta.h"
-#import "SightViewCell.h"
+#import "FoodViewCell.h"
 #import "HomeViewController.h"
 
 SpecBegin(SightViewCellSpec)
 
-describe(@"SightViewCell", ^{
-    __block SightViewCell *sut;
+describe(@"FoodViewCell", ^{
+    __block FoodViewCell *sut;
 
     beforeEach(^{
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         HomeViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         [vc view];
-        sut =  [vc.tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
+        sut = [vc.tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
     });
 
     it(@"should have an image view", ^{

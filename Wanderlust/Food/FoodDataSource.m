@@ -1,15 +1,15 @@
-#import "SightDataSource.h"
+#import "FoodDataSource.h"
 #import "DataAccessStore.h"
 
-@interface SightDataSource ()
+@interface FoodDataSource ()
 
     @property (strong, nonatomic) NSArray *sights;
-    @property (strong, nonatomic) SightViewCell *sightViewCell;
+    @property (strong, nonatomic) FoodViewCell *sightViewCell;
     @property (nonatomic, strong) DataAccessStore* dataAccessStore;
 
 @end
 
-@implementation SightDataSource
+@implementation FoodDataSource
 
 - (instancetype)init {
     return nil;
@@ -30,7 +30,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    SightViewCell *cell = [self sightViewCellFromTable:tableView];
+    FoodViewCell *cell = [self sightViewCellFromTable:tableView];
     return [cell height];
 }
 
@@ -51,8 +51,8 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    SightViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
-    SightViewModel *sight = [self.sights objectAtIndex:(NSUInteger) [indexPath section]];
+    FoodViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
+    FoodViewModel *sight = [self.sights objectAtIndex:(NSUInteger) [indexPath section]];
     self.sightConfigure(cell, sight);
 
     return cell;
@@ -60,14 +60,14 @@
 }
 
 
-- (SightViewCell *)sightViewCellFromTable:(UITableView *) tableView {
+- (FoodViewCell *)sightViewCellFromTable:(UITableView *) tableView {
     if (!self.sightViewCell) {
-        self.sightViewCell = [tableView dequeueReusableCellWithIdentifier:SightCellIdentifier];
+        self.sightViewCell = [tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
     }
     return self.sightViewCell;
 }
 
-- (SightViewModel *)sightForIndexPath:(NSIndexPath *)indexPath {
+- (FoodViewModel *)sightForIndexPath:(NSIndexPath *)indexPath {
     return [[self sights] objectAtIndex:(NSUInteger) [indexPath section]];
 }
 @end

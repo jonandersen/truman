@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "HomeViewController.h"
-#import "SightDataSource.h"
+#import "FoodDataSource.h"
 #import "Registry.h"
 
 @implementation AppDelegate
@@ -23,7 +23,7 @@
     HomeViewController * vc = (HomeViewController *)nav.topViewController;
 
 
-//    SightViewModel *viewModel = [[SightViewModel alloc] init];
+//    FoodViewModel *viewModel = [[FoodViewModel alloc] init];
 //    viewModel.title = @"ViewModel";
 //    viewModel.picture = [NSURL URLWithString:@"1.jpg"];
 //

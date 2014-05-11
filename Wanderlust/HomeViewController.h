@@ -1,12 +1,12 @@
-#import "SightViewModel.h"
+#import "FoodViewModel.h"
 
-@class SightDataSource;
+@class FoodDataSource;
 @class Registry;
 
 @interface HomeViewController : UIViewController
 
-@property(strong, nonatomic) SightViewModel *sight;
-@property(strong, nonatomic)  SightDataSource *sightDataSource;
+@property(strong, nonatomic) FoodViewModel *sight;
+@property(strong, nonatomic)  FoodDataSource *sightDataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property(nonatomic, strong) id imageService;

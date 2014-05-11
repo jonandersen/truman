@@ -1,9 +1,9 @@
 
-#import "SightViewCell.h"
+#import "FoodViewCell.h"
 
-@implementation SightViewCell
+@implementation FoodViewCell
 
-NSString *const SightCellIdentifier = @"SightCell";
+NSString *const FoodCellIdentifier = @"FoodCell";
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {

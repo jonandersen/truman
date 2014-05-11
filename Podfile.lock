@@ -4,11 +4,12 @@ PODS:
   - OCMockito (1.2.0):
     - OCHamcrest (~> 3.0)
   - ReactiveCocoa (2.3):
-    - ReactiveCocoa/Core
-    - ReactiveCocoa/no-arc
+    - ReactiveCocoa/UI
   - ReactiveCocoa/Core (2.3):
     - ReactiveCocoa/no-arc
   - ReactiveCocoa/no-arc (2.3)
+  - ReactiveCocoa/UI (2.3):
+    - ReactiveCocoa/Core
   - Specta (0.2.1)
   - SwipeView (1.3.1)
 
@@ -23,7 +24,7 @@ SPEC CHECKSUMS:
   Expecta: 5c147dedfea5fbcf773995f7e65020abcc936ce5
   OCHamcrest: 782c52ae8c673e5d6060a65005cfd26d20d519ba
   OCMockito: 050fca9528760faa8b5fafc82faad9d54f0864c0
-  ReactiveCocoa: 1f6265f9d521923d3efcc37b00722cefc16df269
+  ReactiveCocoa: dde7b11a14954edf789e7343b2c32e595caabd01
   Specta: 2d06220591110c6d9757d8be8ecf8e63aa40dc2a
   SwipeView: fe0c29fd526cebbe8393c4566f818a11ccd4108b
 

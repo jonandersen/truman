@@ -1,10 +1,10 @@
 #import <SwipeView/SwipeView.h>
-#import "SightViewController.h"
-#import "SightViewModel.h"
+#import "FoodViewController.h"
+#import "FoodViewModel.h"
 #import "ImageService.h"
 #import "SwipeViewDataSource.h"
 
-@implementation SightViewController {
+@implementation FoodViewController {
 
 }
 

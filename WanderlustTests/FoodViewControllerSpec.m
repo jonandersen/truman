@@ -9,26 +9,26 @@
 #define EXP_SHORTHAND
 #import "Expecta.h"
 
-#import "SightViewController.h"
-#import "SightViewModel.h"
+#import "FoodViewController.h"
+#import "FoodViewModel.h"
 #import "ImageService.h"
 #import "SwipeViewDataSource.h"
 
 SpecBegin(SightViewControllerSpec)
 
 describe(@"SightViewControllerSpec", ^{
-    __block SightViewController *sut;
-    __block SightViewModel *mockSightViewModel;
+    __block FoodViewController *sut;
+    __block FoodViewModel *mockSightViewModel;
     __block ImageService *mockImageService;
     __block SwipeViewDataSource *mockSwipeViewDataSource;
 
     beforeEach(^{
-        mockSightViewModel = mock([SightViewModel class]);
+        mockSightViewModel = mock([FoodViewModel class]);
         mockImageService = mock([ImageService  class]);
         mockSwipeViewDataSource = mock([SwipeViewDataSource class]);
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
-        sut = [storyboard instantiateViewControllerWithIdentifier:@"SightViewController"];
+        sut = [storyboard instantiateViewControllerWithIdentifier:@"FoodViewController"];
 
         sut.sight = mockSightViewModel;
         sut.imageService = mockImageService;

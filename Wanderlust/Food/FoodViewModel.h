@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface SightViewModel : NSObject
+@interface FoodViewModel : NSObject
 
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * continent;

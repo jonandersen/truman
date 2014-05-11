@@ -1,7 +1,7 @@
 
-@interface SightViewCell : UITableViewCell
+@interface FoodViewCell : UITableViewCell
 
-FOUNDATION_EXPORT NSString *const SightCellIdentifier;
+FOUNDATION_EXPORT NSString *const FoodCellIdentifier;
 
 @property (weak, nonatomic) IBOutlet UIImageView *sightImageView;
 @property (weak, nonatomic) IBOutlet UILabel *titleLabel;

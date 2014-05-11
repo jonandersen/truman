@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SightCell" rowHeight="200" id="TkJ-e6-7kv" customClass="SightViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="FoodCell" rowHeight="200" id="TkJ-e6-7kv" customClass="FoodViewCell">
                                 <rect key="frame" x="0.0" y="119" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="TkJ-e6-7kv" id="WZZ-UH-cM5">
@@ -92,7 +92,7 @@
         <!--Sight View Controller-->
         <scene sceneID="8uw-QO-8EU">
             <objects>
-                <viewController storyboardIdentifier="SightViewController" id="kp1-ye-CK5" customClass="SightViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FoodViewController" id="kp1-ye-CK5" customClass="FoodViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="TGm-BI-ypE"/>
                         <viewControllerLayoutGuide type="bottom" id="LoR-Im-SAp"/>

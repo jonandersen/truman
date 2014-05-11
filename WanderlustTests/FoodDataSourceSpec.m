@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "SightDataSource.h"
+#import "FoodDataSource.h"
 
 #import "Specta.h"
 
@@ -14,19 +14,19 @@
 
 SpecBegin(SightDataSource)
 
-describe(@"SightDataSource ", ^{
-    __block SightDataSource *sut;
+describe(@"FoodDataSource ", ^{
+    __block FoodDataSource *sut;
     __block UITableView *tableView;
-    __block SightViewCell *cell;
+    __block FoodViewCell *cell;
     __block BOOL configuredCell;
-    __block SightViewModel *viewModelFromBlock;
+    __block FoodViewModel *viewModelFromBlock;
     __block NSArray* mockSights;
     __block DataAccessStore* mockDataAccessStore;
 
     beforeEach(^{
         mockSights = mock([NSArray class]);
         tableView = mock([UITableView class]);
-        cell = mock([SightViewCell class]);
+        cell = mock([FoodViewCell class]);
         mockDataAccessStore = mock([DataAccessStore class]);
 
         //Mock out the sights
@@ -34,12 +34,12 @@ describe(@"SightDataSource ", ^{
 
 
         //System under test
-        sut = [[SightDataSource alloc] initWithStore:mockDataAccessStore];
+        sut = [[FoodDataSource alloc] initWithStore:mockDataAccessStore];
 
 
         //Cell configuration
         configuredCell = NO;
-        sut.sightConfigure = ^(SightViewCell *bannerTableViewCell, SightViewModel *viewModel) {
+        sut.sightConfigure = ^(FoodViewCell *bannerTableViewCell, FoodViewModel *viewModel) {
             configuredCell = YES;
             viewModelFromBlock = viewModel;
         };
@@ -47,7 +47,7 @@ describe(@"SightDataSource ", ^{
     });
 
     it(@"should not allow creation without a store", ^{
-        expect([[SightDataSource alloc] init]).to.beNil();
+        expect([[FoodDataSource alloc] init]).to.beNil();
     });
 
     it(@"should conform to UITableViewDataSource", ^{
@@ -73,7 +73,7 @@ describe(@"SightDataSource ", ^{
 
     describe(@"height calcuation", ^{
         it(@"should use the height for the cell", ^{
-            [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier]) willReturn:cell];
+            [given([tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier]) willReturn:cell];
             [sut tableView:tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             [verify(cell) height];
         });
@@ -87,7 +87,7 @@ describe(@"SightDataSource ", ^{
 
     describe(@"sight for indexPath", ^{
         it(@"should return a sight for the indexpath", ^{
-            SightViewModel *sightViewModel = mock([SightViewModel class]);
+            FoodViewModel *sightViewModel = mock([FoodViewModel class]);
             [given([mockSights objectAtIndex:2]) willReturn:sightViewModel];
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:2];
             expect([sut sightForIndexPath:indexPath]).to.equal(sightViewModel);
@@ -99,21 +99,21 @@ describe(@"SightDataSource ", ^{
         NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
 
         it(@"should return a Sight Cell on position 0", ^{
-            [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier])willReturn:cell];
+            [given([tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier])willReturn:cell];
             UITableViewCell *result = [sut tableView:tableView cellForRowAtIndexPath:index];
-            expect(result).to.beKindOf([SightViewCell class]);
+            expect(result).to.beKindOf([FoodViewCell class]);
 
         });
 
         it(@"should configure the Sight Cell", ^{
 
-            [given([tableView dequeueReusableCellWithIdentifier:SightCellIdentifier]) willReturn:cell];
+            [given([tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier]) willReturn:cell];
             [sut tableView:tableView cellForRowAtIndexPath:index];
             expect(configuredCell).to.beTruthy();
         });
 
         it(@"should provide a sight in the configure block", ^{
-            SightViewModel *viewModel = mock([SightViewModel class]);
+            FoodViewModel *viewModel = mock([FoodViewModel class]);
             [given([mockSights objectAtIndex:0]) willReturn:viewModel];
 
             [sut tableView:tableView cellForRowAtIndexPath:index];
@@ -122,7 +122,7 @@ describe(@"SightDataSource ", ^{
         });
 
         it(@"should provide a sight for the section index", ^{
-            SightViewModel *viewModel = mock([SightViewModel class]);
+            FoodViewModel *viewModel = mock([FoodViewModel class]);
             [given([mockSights objectAtIndex:1]) willReturn:viewModel];
 
             [sut tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];

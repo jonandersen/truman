@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "SightViewModel.h"
+#import "FoodViewModel.h"
 
 #import "Specta.h"
 
@@ -13,11 +13,11 @@
 
 SpecBegin(SightViewModelSpec)
 
-describe(@"SightViewModel should", ^{
-    __block SightViewModel *sut;
+describe(@"FoodViewModel should", ^{
+    __block FoodViewModel *sut;
 
     beforeEach(^{
-       sut = [SightViewModel new];
+       sut = [FoodViewModel new];
     });
 
     it(@"have a title", ^{
