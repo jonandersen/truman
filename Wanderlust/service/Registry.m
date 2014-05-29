@@ -1,5 +1,5 @@
 #import "Registry.h"
-#import "FoodDataSource.h"
+#import "MessageDataSource.h"
 #import "DataAccessStore.h"
 #import "ImageService.h"
 #import "SwipeViewDataSource.h"
@@ -8,9 +8,9 @@
 @implementation Registry {
 
 }
-- (FoodDataSource *)sightDataSource {
+- (MessageDataSource *)sightDataSource {
     DataAccessStore *dataAccessStore = [[DataAccessStore alloc] init];
-    return [[FoodDataSource alloc] initWithStore:dataAccessStore];
+    return [[MessageDataSource alloc] initWithStore:dataAccessStore];
 }
 
 - (ImageService *)imageService {

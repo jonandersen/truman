@@ -4,7 +4,7 @@
 //
 
 #import "DataAccessStore.h"
-#import "FoodViewModel.h"
+#import "MessageViewModel.h"
 
 
 @implementation DataAccessStore {
@@ -13,7 +13,7 @@
 - (NSArray *)sightViewModels {
     NSMutableArray *sightModels = [[NSMutableArray alloc] initWithCapacity:5];
     for(int i = 0; i< 5; i ++){
-        FoodViewModel * viewModel = [[FoodViewModel alloc] init];
+        MessageViewModel * viewModel = [[MessageViewModel alloc] init];
         viewModel.name = [NSString stringWithFormat:@"ViewModel%i",i];
         viewModel.picture = [NSURL URLWithString:[NSString stringWithFormat:@"missingImage"]];
         viewModel.country = @"Germany";

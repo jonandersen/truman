@@ -1,13 +1,13 @@
 #import <Foundation/Foundation.h>
 
-@class FoodDataSource;
+@class MessageDataSource;
 @class ImageService;
 @class SwipeViewDataSource;
 
 
 @interface Registry : NSObject
 
--(FoodDataSource *) sightDataSource;
+-(MessageDataSource *) sightDataSource;
 -(ImageService *) imageService;
 -(SwipeViewDataSource *) swipeViewDataSource;
 

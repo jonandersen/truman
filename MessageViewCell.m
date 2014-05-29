@@ -1,7 +1,7 @@
 
-#import "FoodViewCell.h"
+#import "MessageViewCell.h"
 
-@implementation FoodViewCell
+@implementation MessageViewCell
 
 NSString *const FoodCellIdentifier = @"FoodCell";
 

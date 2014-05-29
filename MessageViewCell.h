@@ -1,5 +1,5 @@
 
-@interface FoodViewCell : UITableViewCell
+@interface MessageViewCell : UITableViewCell
 
 FOUNDATION_EXPORT NSString *const FoodCellIdentifier;
 

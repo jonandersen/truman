@@ -1,6 +1,6 @@
 #import <Foundation/Foundation.h>
 
-@interface FoodViewModel : NSObject
+@interface MessageViewModel : NSObject
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString * continent;

@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "FoodViewModel.h"
+#import "MessageViewModel.h"
 
 #import "Specta.h"
 
@@ -11,13 +11,13 @@
 
 #import "Expecta.h"
 
-SpecBegin(SightViewModelSpec)
+SpecBegin(MessageViewModelSpec)
 
-describe(@"FoodViewModel should", ^{
-    __block FoodViewModel *sut;
+describe(@"MessageViewModel should", ^{
+    __block MessageViewModel *sut;
 
     beforeEach(^{
-       sut = [FoodViewModel new];
+       sut = [MessageViewModel new];
     });
 
     it(@"have a name", ^{

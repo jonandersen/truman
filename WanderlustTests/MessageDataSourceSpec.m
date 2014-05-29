@@ -1,5 +1,5 @@
 #import <XCTest/XCTest.h>
-#import "FoodDataSource.h"
+#import "MessageDataSource.h"
 
 #import "Specta.h"
 
@@ -12,21 +12,21 @@
 #import "Expecta.h"
 #import "DataAccessStore.h"
 
-SpecBegin(SightDataSource)
+SpecBegin(MessageDataSource)
 
-describe(@"FoodDataSource ", ^{
-    __block FoodDataSource *sut;
+describe(@"MessageDataSource ", ^{
+    __block MessageDataSource *sut;
     __block UITableView *tableView;
-    __block FoodViewCell *cell;
+    __block MessageViewCell *cell;
     __block BOOL configuredCell;
-    __block FoodViewModel *viewModelFromBlock;
+    __block MessageViewModel *viewModelFromBlock;
     __block NSArray* mockSights;
     __block DataAccessStore* mockDataAccessStore;
 
     beforeEach(^{
         mockSights = mock([NSArray class]);
         tableView = mock([UITableView class]);
-        cell = mock([FoodViewCell class]);
+        cell = mock([MessageViewCell class]);
         mockDataAccessStore = mock([DataAccessStore class]);
 
         //Mock out the food
@@ -34,12 +34,12 @@ describe(@"FoodDataSource ", ^{
 
 
         //System under test
-        sut = [[FoodDataSource alloc] initWithStore:mockDataAccessStore];
+        sut = [[MessageDataSource alloc] initWithStore:mockDataAccessStore];
 
 
         //Cell configuration
         configuredCell = NO;
-        sut.sightConfigure = ^(FoodViewCell *bannerTableViewCell, FoodViewModel *viewModel) {
+        sut.sightConfigure = ^(MessageViewCell *bannerTableViewCell, MessageViewModel *viewModel) {
             configuredCell = YES;
             viewModelFromBlock = viewModel;
         };
@@ -47,7 +47,7 @@ describe(@"FoodDataSource ", ^{
     });
 
     it(@"should not allow creation without a store", ^{
-        expect([[FoodDataSource alloc] init]).to.beNil();
+        expect([[MessageDataSource alloc] init]).to.beNil();
     });
 
     it(@"should conform to UITableViewDataSource", ^{
@@ -87,7 +87,7 @@ describe(@"FoodDataSource ", ^{
 
     describe(@"sight for indexPath", ^{
         it(@"should return a sight for the indexpath", ^{
-            FoodViewModel *sightViewModel = mock([FoodViewModel class]);
+            MessageViewModel *sightViewModel = mock([MessageViewModel class]);
             [given([mockSights objectAtIndex:2]) willReturn:sightViewModel];
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:2];
             expect([sut sightForIndexPath:indexPath]).to.equal(sightViewModel);
@@ -101,7 +101,7 @@ describe(@"FoodDataSource ", ^{
         it(@"should return a Sight Cell on position 0", ^{
             [given([tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier])willReturn:cell];
             UITableViewCell *result = [sut tableView:tableView cellForRowAtIndexPath:index];
-            expect(result).to.beKindOf([FoodViewCell class]);
+            expect(result).to.beKindOf([MessageViewCell class]);
 
         });
 
@@ -113,7 +113,7 @@ describe(@"FoodDataSource ", ^{
         });
 
         it(@"should provide a sight in the configure block", ^{
-            FoodViewModel *viewModel = mock([FoodViewModel class]);
+            MessageViewModel *viewModel = mock([MessageViewModel class]);
             [given([mockSights objectAtIndex:0]) willReturn:viewModel];
 
             [sut tableView:tableView cellForRowAtIndexPath:index];
@@ -122,7 +122,7 @@ describe(@"FoodDataSource ", ^{
         });
 
         it(@"should provide a sight for the section index", ^{
-            FoodViewModel *viewModel = mock([FoodViewModel class]);
+            MessageViewModel *viewModel = mock([MessageViewModel class]);
             [given([mockSights objectAtIndex:1]) willReturn:viewModel];
 
             [sut tableView:tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:1]];

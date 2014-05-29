@@ -18,7 +18,7 @@ describe(@"RegistrySpec", ^{
         sut = [[Registry alloc] init];
     });
 
-    it(@"should provide a FoodDataSource", ^{
+    it(@"should provide a MessageDataSource", ^{
         expect([sut sightDataSource]).toNot.beNil();
     });
 

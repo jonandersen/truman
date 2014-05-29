@@ -10,10 +10,10 @@
 #import "Expecta.h"
 
 #import "HomeViewController.h"
-#import "FoodViewCell.h"
+#import "MessageViewCell.h"
 #import "UITableViewMock.h"
-#import "FoodDataSource.h"
-#import "FoodViewController.h"
+#import "MessageDataSource.h"
+#import "MessageViewController.h"
 #import "ImageService.h"
 #import "Registry.h"
 #import "SwipeViewDataSource.h"
@@ -22,13 +22,13 @@ SpecBegin(HomeViewControllerSpec)
 
 describe(@"HomeViewController", ^{
     __block HomeViewController *sut;
-    __block FoodViewModel *mockVM;
-    __block FoodDataSource *mockDataSource;
+    __block MessageViewModel *mockVM;
+    __block MessageDataSource *mockDataSource;
     __block Registry *mockRegistry;
 
     beforeEach(^{
-        mockVM = mock([FoodViewModel class]);
-        mockDataSource = mock([FoodDataSource class]);
+        mockVM = mock([MessageViewModel class]);
+        mockDataSource = mock([MessageDataSource class]);
         mockRegistry = mock([Registry class]);
 
         [given([mockVM valueForKeyPath:@"name"]) willReturn:@"Konigsee"];
@@ -46,7 +46,7 @@ describe(@"HomeViewController", ^{
         expect(sut).to.beInstanceOf([HomeViewController class]);
     });
 
-    it(@"should have a FoodDataSource property", ^{
+    it(@"should have a MessageDataSource property", ^{
         expect(sut.foodDataSource).toNot.beNil();
     });
 
@@ -93,16 +93,16 @@ describe(@"HomeViewController", ^{
         });
     });
 
-    describe(@"Configure FoodViewCell", ^{
-        __block FoodViewCell *cellMock;
-        __block FoodViewModel *viewModel;
+    describe(@"Configure MessageViewCell", ^{
+        __block MessageViewCell *cellMock;
+        __block MessageViewModel *viewModel;
         __block MKTArgumentCaptor *argument;
         __block BannerTableViewCellConfigureBlock block;
 
         beforeEach(^{
             argument = [[MKTArgumentCaptor alloc] init];
-            cellMock = mock([FoodViewCell class]);
-            viewModel = mock([FoodViewModel class]);
+            cellMock = mock([MessageViewCell class]);
+            viewModel = mock([MessageViewModel class]);
             [sut.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             [verify(mockDataSource) setSightConfigure:[argument capture]];
             block = [argument value];
@@ -127,11 +127,11 @@ describe(@"HomeViewController", ^{
 
 
     describe(@"navigation segue", ^{
-        __block FoodViewController *sightViewController;
+        __block MessageViewController *sightViewController;
         __block UIStoryboardSegue *segue;
 
         beforeEach(^{
-            sightViewController = mock([FoodViewController class]);
+            sightViewController = mock([MessageViewController class]);
             segue = [UIStoryboardSegue segueWithIdentifier:@"SightViewControllerPush" source:sut destination:sightViewController performHandler:^{
                 // do nothing here
             }];
@@ -162,7 +162,7 @@ describe(@"HomeViewController", ^{
 
         it(@"should navigate to new view controller when selecting sight", ^{
             NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:1];
-            FoodViewModel *sightViewModel = mock([FoodViewModel class]);
+            MessageViewModel *sightViewModel = mock([MessageViewModel class]);
             [given([mockDataSource sightForIndexPath:index]) willReturn:sightViewModel];
 
             [sut.tableView selectRowAtIndexPath:index animated:NO scrollPosition:UITableViewScrollPositionNone];

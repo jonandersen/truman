@@ -7,7 +7,7 @@
 #import "Expecta.h"
 
 #import "DataAccessStore.h"
-#import "FoodViewModel.h"
+#import "MessageViewModel.h"
 
 SpecBegin(DataAccessStoreSpec)
 
@@ -25,7 +25,7 @@ describe(@"DataAccessStoreSpec", ^{
     it(@"should return of type SightViewModels", ^{
         NSArray *viewModels = [sut sightViewModels];
         for(int i = 0; i < [viewModels count]; i ++){
-            expect([viewModels objectAtIndex:i]).to.beInstanceOf([FoodViewModel class]);
+            expect([viewModels objectAtIndex:i]).to.beInstanceOf([MessageViewModel class]);
         }
     });
 

@@ -6,15 +6,15 @@
 #import <Foundation/Foundation.h>
 #import <SwipeView/SwipeView.h>
 
-@class FoodViewModel;
+@class MessageViewModel;
 @class ImageService;
 @class SwipeView;
 @class SwipeViewDataSource;
 
 
-@interface FoodViewController : UIViewController
+@interface MessageViewController : UIViewController
 
-@property(nonatomic, strong) FoodViewModel *sight;
+@property(nonatomic, strong) MessageViewModel *sight;
 @property (weak, nonatomic) IBOutlet SwipeView *swipeView;
 
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;

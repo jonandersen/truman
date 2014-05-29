@@ -1,6 +1,6 @@
 #import "HomeViewController.h"
-#import "FoodDataSource.h"
-#import "FoodViewController.h"
+#import "MessageDataSource.h"
+#import "MessageViewController.h"
 #import "ImageService.h"
 #import "Registry.h"
 
@@ -17,7 +17,7 @@
         self.title = name;
     }];
     __weak HomeViewController* weakSelf = self;
-    self.foodDataSource.sightConfigure = ^(FoodViewCell *cell, FoodViewModel *sight ){
+    self.foodDataSource.sightConfigure = ^(MessageViewCell *cell, MessageViewModel *sight ){
         cell.titleLabel.text = sight.name;
         cell.sightImageView.image = [weakSelf.imageService imageForUrl:sight.picture];
     };
@@ -39,8 +39,8 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    FoodViewModel *sightViewModel =  [self.foodDataSource sightForIndexPath:[self.tableView indexPathForSelectedRow]];
-    FoodViewController *sightViewController =[segue destinationViewController];
+    MessageViewModel *sightViewModel =  [self.foodDataSource sightForIndexPath:[self.tableView indexPathForSelectedRow]];
+    MessageViewController *sightViewController =[segue destinationViewController];
     sightViewController.sight = sightViewModel;
     sightViewController.imageService = self.imageService;
     sightViewController.swipeViewDataSource = [self.registry swipeViewDataSource];

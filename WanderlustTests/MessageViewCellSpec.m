@@ -6,13 +6,13 @@
 #define EXP_SHORTHAND
 
 #import "Expecta.h"
-#import "FoodViewCell.h"
+#import "MessageViewCell.h"
 #import "HomeViewController.h"
 
-SpecBegin(SightViewCellSpec)
+SpecBegin(MessageViewCellSpec)
 
-describe(@"FoodViewCell", ^{
-    __block FoodViewCell *sut;
+describe(@"MessageViewCell", ^{
+    __block MessageViewCell *sut;
 
     beforeEach(^{
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
