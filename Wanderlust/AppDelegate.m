@@ -24,11 +24,11 @@
 
 
 //    FoodViewModel *viewModel = [[FoodViewModel alloc] init];
-//    viewModel.title = @"ViewModel";
+//    viewModel.name = @"ViewModel";
 //    viewModel.picture = [NSURL URLWithString:@"1.jpg"];
 //
 
-    vc.sightDataSource = [registry sightDataSource];
+    vc.foodDataSource = [registry sightDataSource];
     vc.imageService = [registry imageService];
     vc.registry = registry;
     return YES;

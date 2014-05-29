@@ -14,8 +14,8 @@
     NSMutableArray *sightModels = [[NSMutableArray alloc] initWithCapacity:5];
     for(int i = 0; i< 5; i ++){
         FoodViewModel * viewModel = [[FoodViewModel alloc] init];
-        viewModel.title = [NSString stringWithFormat:@"ViewModel%i",i];
-        viewModel.picture = [NSURL URLWithString:[NSString stringWithFormat:@"shakshuka.jpg"]];
+        viewModel.name = [NSString stringWithFormat:@"ViewModel%i",i];
+        viewModel.picture = [NSURL URLWithString:[NSString stringWithFormat:@"missingImage"]];
         viewModel.country = @"Germany";
         viewModel.region = @"Bavaria";
         [sightModels addObject:viewModel];

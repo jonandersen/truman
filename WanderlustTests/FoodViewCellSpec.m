@@ -25,7 +25,7 @@ describe(@"FoodViewCell", ^{
         expect(sut.sightImageView).toNot.beNil();
     });
 
-    it(@"should have a location title", ^{
+    it(@"should have a location name", ^{
         expect(sut.titleLabel).toNot.beNil();
     });
 

@@ -29,7 +29,7 @@ describe(@"FoodDataSource ", ^{
         cell = mock([FoodViewCell class]);
         mockDataAccessStore = mock([DataAccessStore class]);
 
-        //Mock out the sights
+        //Mock out the food
         [given([mockDataAccessStore sightViewModels]) willReturn:mockSights];
 
 
@@ -64,7 +64,7 @@ describe(@"FoodDataSource ", ^{
 
 
     describe(@"numberOfSectionsInTableView", ^{
-        it(@"should have as many as sights", ^{
+        it(@"should have as many as food", ^{
             [given([mockSights count]) willReturn:[NSNumber numberWithInt:2]];
             NSInteger rows = [sut numberOfSectionsInTableView:tableView];
             expect(rows).to.equal([mockSights count]);

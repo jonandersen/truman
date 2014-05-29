@@ -20,9 +20,9 @@ describe(@"FoodViewModel should", ^{
        sut = [FoodViewModel new];
     });
 
-    it(@"have a title", ^{
-        sut.title = @"title";
-        expect(sut.title).to.equal(@"title");
+    it(@"have a name", ^{
+        sut.name = @"name";
+        expect(sut.name).to.equal(@"name");
     });
 
     it(@"have a continent", ^{

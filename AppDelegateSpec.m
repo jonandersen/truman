@@ -46,7 +46,7 @@ describe(@"AppDelegate", ^{
         });
 
         it(@"should have a datasource set", ^{
-            expect(homeViewController.sightDataSource).toNot.beNil();
+            expect(homeViewController.foodDataSource).toNot.beNil();
         });
 
         it(@"should have imageservice set", ^{

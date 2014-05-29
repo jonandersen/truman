@@ -5,8 +5,8 @@
 
 @interface HomeViewController : UIViewController
 
-@property(strong, nonatomic) FoodViewModel *sight;
-@property(strong, nonatomic)  FoodDataSource *sightDataSource;
+@property(strong, nonatomic) FoodViewModel *foodViewModel;
+@property(strong, nonatomic)  FoodDataSource *foodDataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property(nonatomic, strong) id imageService;

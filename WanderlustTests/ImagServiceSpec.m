@@ -19,7 +19,7 @@ describe(@"ImageServiceSpec", ^{
 
 
     it(@"should return an image for a url", ^{
-        NSURL *url = [NSURL URLWithString:@"testimage.jpg"];
+        NSURL *url = [NSURL URLWithString:@"testImage.png"];
         expect([sut imageForUrl:url]).toNot.beNil();
     });
 

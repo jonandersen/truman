@@ -7,22 +7,22 @@
 @implementation HomeViewController
 
 - (void)dealloc {
-    self.sightDataSource = nil;
+    self.foodDataSource = nil;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [RACObserve(self, sight.title) subscribeNext:^(NSString*  title) {
-        self.title = title;
+    [RACObserve(self, foodViewModel.name) subscribeNext:^(NSString*  name) {
+        self.title = name;
     }];
     __weak HomeViewController* weakSelf = self;
-    self.sightDataSource.sightConfigure = ^(FoodViewCell *cell, FoodViewModel *sight ){
-        cell.titleLabel.text = sight.title;
+    self.foodDataSource.sightConfigure = ^(FoodViewCell *cell, FoodViewModel *sight ){
+        cell.titleLabel.text = sight.name;
         cell.sightImageView.image = [weakSelf.imageService imageForUrl:sight.picture];
     };
-    self.tableView.delegate = self.sightDataSource;
-    self.tableView.dataSource = self.sightDataSource;
+    self.tableView.delegate = self.foodDataSource;
+    self.tableView.dataSource = self.foodDataSource;
     
 
     // Do any additional setup after loading the view.
@@ -39,7 +39,7 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    FoodViewModel *sightViewModel =  [self.sightDataSource sightForIndexPath:[self.tableView indexPathForSelectedRow]];
+    FoodViewModel *sightViewModel =  [self.foodDataSource sightForIndexPath:[self.tableView indexPathForSelectedRow]];
     FoodViewController *sightViewController =[segue destinationViewController];
     sightViewController.sight = sightViewModel;
     sightViewController.imageService = self.imageService;

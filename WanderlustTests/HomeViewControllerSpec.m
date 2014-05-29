@@ -22,21 +22,21 @@ SpecBegin(HomeViewControllerSpec)
 
 describe(@"HomeViewController", ^{
     __block HomeViewController *sut;
-    __block FoodViewModel *mockSight;
+    __block FoodViewModel *mockVM;
     __block FoodDataSource *mockDataSource;
     __block Registry *mockRegistry;
 
     beforeEach(^{
-        mockSight = mock([FoodViewModel class]);
+        mockVM = mock([FoodViewModel class]);
         mockDataSource = mock([FoodDataSource class]);
         mockRegistry = mock([Registry class]);
 
-        [given([mockSight valueForKeyPath:@"title"]) willReturn:@"Konigsee"];
+        [given([mockVM valueForKeyPath:@"name"]) willReturn:@"Konigsee"];
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         sut = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-        sut.sight = mockSight;
-        sut.sightDataSource = mockDataSource;
+        sut.foodViewModel = mockVM;
+        sut.foodDataSource = mockDataSource;
         sut.registry = mockRegistry;
         [sut view];
     });
@@ -47,7 +47,7 @@ describe(@"HomeViewController", ^{
     });
 
     it(@"should have a FoodDataSource property", ^{
-        expect(sut.sightDataSource).toNot.beNil();
+        expect(sut.foodDataSource).toNot.beNil();
     });
 
     it(@"should have an ImageService property", ^{
@@ -61,7 +61,7 @@ describe(@"HomeViewController", ^{
 
 
 
-    describe(@"navigation title", ^{
+    describe(@"navigation name", ^{
 
         it(@"should be set to model", ^{
             expect(sut.title).to.equal(@"Konigsee");
@@ -108,9 +108,9 @@ describe(@"HomeViewController", ^{
             block = [argument value];
         });
 
-        it(@"should set title", ^{
+        it(@"should set name", ^{
             block(cellMock, viewModel);
-            [verify(viewModel) title];
+            [verify(viewModel) name];
             [verify(cellMock) titleLabel];
 
         });

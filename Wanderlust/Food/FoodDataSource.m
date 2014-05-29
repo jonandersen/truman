@@ -3,8 +3,8 @@
 
 @interface FoodDataSource ()
 
-    @property (strong, nonatomic) NSArray *sights;
-    @property (strong, nonatomic) FoodViewCell *sightViewCell;
+    @property (strong, nonatomic) NSArray *food;
+    @property (strong, nonatomic) FoodViewCell *foodViewCell;
     @property (nonatomic, strong) DataAccessStore* dataAccessStore;
 
 @end
@@ -18,14 +18,14 @@
 - (instancetype) initWithStore:(DataAccessStore *)dataAccessStore {
     if (self  = [super init]) {
         self.dataAccessStore = dataAccessStore;
-        self.sights = [self.dataAccessStore sightViewModels];
+        self.food = [self.dataAccessStore sightViewModels];
     }
     return self;
 }
 
 - (void) dealloc {
-    self.sights = nil;
-    self.sightViewCell = nil;
+    self.food = nil;
+    self.foodViewCell = nil;
     self.dataAccessStore = nil;
 }
 
@@ -41,7 +41,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.sights count];
+    return [self.food count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -52,7 +52,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     FoodViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
-    FoodViewModel *sight = [self.sights objectAtIndex:(NSUInteger) [indexPath section]];
+    FoodViewModel *sight = [self.food objectAtIndex:(NSUInteger) [indexPath section]];
     self.sightConfigure(cell, sight);
 
     return cell;
@@ -61,13 +61,13 @@
 
 
 - (FoodViewCell *)sightViewCellFromTable:(UITableView *) tableView {
-    if (!self.sightViewCell) {
-        self.sightViewCell = [tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
+    if (!self.foodViewCell) {
+        self.foodViewCell = [tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
     }
-    return self.sightViewCell;
+    return self.foodViewCell;
 }
 
 - (FoodViewModel *)sightForIndexPath:(NSIndexPath *)indexPath {
-    return [[self sights] objectAtIndex:(NSUInteger) [indexPath section]];
+    return [[self food] objectAtIndex:(NSUInteger) [indexPath section]];
 }
 @end

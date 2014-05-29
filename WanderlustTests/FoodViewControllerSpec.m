@@ -18,19 +18,19 @@ SpecBegin(SightViewControllerSpec)
 
 describe(@"SightViewControllerSpec", ^{
     __block FoodViewController *sut;
-    __block FoodViewModel *mockSightViewModel;
+    __block FoodViewModel *mockVM;
     __block ImageService *mockImageService;
     __block SwipeViewDataSource *mockSwipeViewDataSource;
 
     beforeEach(^{
-        mockSightViewModel = mock([FoodViewModel class]);
+        mockVM = mock([FoodViewModel class]);
         mockImageService = mock([ImageService  class]);
         mockSwipeViewDataSource = mock([SwipeViewDataSource class]);
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         sut = [storyboard instantiateViewControllerWithIdentifier:@"FoodViewController"];
 
-        sut.sight = mockSightViewModel;
+        sut.sight = mockVM;
         sut.imageService = mockImageService;
         sut.swipeViewDataSource = mockSwipeViewDataSource;
 
@@ -58,7 +58,7 @@ describe(@"SightViewControllerSpec", ^{
 //    it(@"should set image view to sight image", ^{
 //        UIImage *mockImage = mock([UIImage class]);
 //        NSURL *url = [NSURL URLWithString:@"testimage.jpg"];
-//        [given([mockSightViewModel picture]) willReturn:url];
+//        [given([mockVM picture]) willReturn:url];
 //
 //        [given([mockImageService imageForUrl:url]) willReturn:mockImage];
 //
@@ -71,8 +71,8 @@ describe(@"SightViewControllerSpec", ^{
     });
 
     it(@"should set the locaiton label to the sight", ^{
-        [given(mockSightViewModel.country) willReturn:@"Germany"];
-        [given(mockSightViewModel.region) willReturn:@"Bavaria"];
+        [given(mockVM.country) willReturn:@"Germany"];
+        [given(mockVM.region) willReturn:@"Bavaria"];
 
         [sut viewDidLoad];
 
