@@ -10,14 +10,14 @@
 
 - (void)viewDidLoad {
     self.swipeView.delegate = self.swipeViewDataSource;
-    //UIImage *image = [self.imageService imageForUrl:self.sight.picture];
+    //UIImage *image = [self.imageService imageForUrl:self.messageViewModel.picture];
     //self.sightUIImageView.image = image;
-    NSString *locationText = [NSString stringWithFormat:@"%@/%@", self.sight.region, self.sight.country];
+    NSString *locationText = [NSString stringWithFormat:@"%@ by %@", self.messageViewModel.message, self.messageViewModel.poster];
     self.locationLabel.text  = locationText;
 }
 
 - (void) dealloc{
-    self.sight = nil;
+    self.messageViewModel = nil;
     self.imageService = nil;
     self.swipeViewDataSource = nil;
 }

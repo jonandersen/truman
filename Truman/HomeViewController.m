@@ -3,26 +3,25 @@
 #import "MessageViewController.h"
 #import "ImageService.h"
 #import "Registry.h"
+#import "MessageViewCell.h"
 
 @implementation HomeViewController
 
 - (void)dealloc {
-    self.foodDataSource = nil;
+    self.messageDataSource = nil;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [RACObserve(self, foodViewModel.name) subscribeNext:^(NSString*  name) {
+    [RACObserve(self, foodViewModel.poster) subscribeNext:^(NSString*  name) {
         self.title = name;
     }];
-    __weak HomeViewController* weakSelf = self;
-    self.foodDataSource.sightConfigure = ^(ImageViewCell *cell, MessageViewModel *sight ){
-        cell.titleLabel.text = sight.name;
-        cell.sightImageView.image = [weakSelf.imageService imageForUrl:sight.picture];
+    self.messageDataSource.sightConfigure = ^(MessageViewCell *cell, MessageViewModel *messageViewModel){
+        cell.textField.text = messageViewModel.message;
     };
-    self.tableView.delegate = self.foodDataSource;
-    self.tableView.dataSource = self.foodDataSource;
+    self.tableView.delegate = self.messageDataSource;
+    self.tableView.dataSource = self.messageDataSource;
     
 
     // Do any additional setup after loading the view.
@@ -39,9 +38,9 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    MessageViewModel *sightViewModel =  [self.foodDataSource sightForIndexPath:[self.tableView indexPathForSelectedRow]];
+    MessageViewModel *sightViewModel =  [self.messageDataSource sightForIndexPath:[self.tableView indexPathForSelectedRow]];
     MessageViewController *sightViewController =[segue destinationViewController];
-    sightViewController.sight = sightViewModel;
+    sightViewController.messageViewModel = sightViewModel;
     sightViewController.imageService = self.imageService;
     sightViewController.swipeViewDataSource = [self.registry swipeViewDataSource];
 }

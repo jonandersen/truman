@@ -20,31 +20,15 @@ describe(@"MessageViewModel should", ^{
        sut = [MessageViewModel new];
     });
 
-    it(@"have a name", ^{
-        sut.name = @"name";
-        expect(sut.name).to.equal(@"name");
+    it(@"have a message", ^{
+        sut.message = @"message";
+        expect(sut.message).to.equal(@"message");
     });
 
-    it(@"have a continent", ^{
-       sut.continent = @"Europe";
-       expect(sut.continent).to.equal(@"Europe");
+    it(@"have a poster", ^{
+       sut.poster = @"poster";
+       expect(sut.poster).to.equal(@"poster");
     });
-
-    it(@"have a country", ^{
-        sut.country = @"Sweden";
-        expect(sut.country).to.equal(@"Sweden");
-    });
-
-    it(@"have a region", ^{
-        sut.region = @"Scania";
-        expect(sut.region).to.equal(@"Scania");
-    });
-
-    it(@"have a picture", ^{
-        sut.picture = [NSURL URLWithString:@"www.image.com"];
-        expect([sut.picture absoluteString]).to.equal(@"www.image.com");
-    });
-
 });
 
 

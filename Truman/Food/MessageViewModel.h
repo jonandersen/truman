@@ -2,10 +2,8 @@
 
 @interface MessageViewModel : NSObject
 
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString * continent;
-@property (nonatomic, strong) NSString * country;
-@property (nonatomic, strong) NSString * region;
-@property (nonatomic, strong) NSURL * picture;
+@property (nonatomic, strong) NSString *message;
+@property (nonatomic, strong) NSString *poster;
+
 
 @end

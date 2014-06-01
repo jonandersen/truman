@@ -17,6 +17,7 @@
 #import "ImageService.h"
 #import "Registry.h"
 #import "SwipeViewDataSource.h"
+#import "MessageViewCell.h"
 
 SpecBegin(HomeViewControllerSpec)
 
@@ -31,12 +32,12 @@ describe(@"HomeViewController", ^{
         mockDataSource = mock([MessageDataSource class]);
         mockRegistry = mock([Registry class]);
 
-        [given([mockVM valueForKeyPath:@"name"]) willReturn:@"Konigsee"];
+        [given([mockVM valueForKeyPath:@"poster"]) willReturn:@"Poster"];
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         sut = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
         sut.foodViewModel = mockVM;
-        sut.foodDataSource = mockDataSource;
+        sut.messageDataSource = mockDataSource;
         sut.registry = mockRegistry;
         [sut view];
     });
@@ -47,7 +48,7 @@ describe(@"HomeViewController", ^{
     });
 
     it(@"should have a MessageDataSource property", ^{
-        expect(sut.foodDataSource).toNot.beNil();
+        expect(sut.messageDataSource).toNot.beNil();
     });
 
     it(@"should have an ImageService property", ^{
@@ -64,7 +65,7 @@ describe(@"HomeViewController", ^{
     describe(@"navigation name", ^{
 
         it(@"should be set to model", ^{
-            expect(sut.title).to.equal(@"Konigsee");
+            expect(sut.title).to.equal(@"Poster");
 
         });
 
@@ -94,34 +95,25 @@ describe(@"HomeViewController", ^{
     });
 
     describe(@"Configure ImageViewCell", ^{
-        __block ImageViewCell *cellMock;
+        __block MessageViewCell *cellMock;
         __block MessageViewModel *viewModel;
         __block MKTArgumentCaptor *argument;
-        __block BannerTableViewCellConfigureBlock block;
+        __block MessageTableViewCellConfigureBlock block;
 
         beforeEach(^{
             argument = [[MKTArgumentCaptor alloc] init];
-            cellMock = mock([ImageViewCell class]);
+            cellMock = mock([MessageViewCell class]);
             viewModel = mock([MessageViewModel class]);
             [sut.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             [verify(mockDataSource) setSightConfigure:[argument capture]];
             block = [argument value];
         });
 
-        it(@"should set name", ^{
+        it(@"should set message", ^{
             block(cellMock, viewModel);
-            [verify(viewModel) name];
-            [verify(cellMock) titleLabel];
+            [verify(viewModel) message];
+            [verify(cellMock) textField];
 
-        });
-
-
-        it(@"should set image", ^{
-            UIImageView *mockImageView = mock([UIImageView class]);
-            [given(cellMock.sightImageView) willReturn:mockImageView];
-            block(cellMock, viewModel);
-            [verify(viewModel) picture];
-            [verify(mockImageView) setImage:[argument capture]];
         });
     });
 
@@ -160,7 +152,7 @@ describe(@"HomeViewController", ^{
 
         });
 
-        it(@"should navigate to new view controller when selecting sight", ^{
+        it(@"should navigate to new view controller when selecting messageViewModel", ^{
             NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:1];
             MessageViewModel *sightViewModel = mock([MessageViewModel class]);
             [given([mockDataSource sightForIndexPath:index]) willReturn:sightViewModel];
@@ -169,7 +161,7 @@ describe(@"HomeViewController", ^{
 
             [sut prepareForSegue:segue sender:self];
 
-            [verify(sightViewController) setSight:sightViewModel];
+            [verify(sightViewController) setMessageViewModel:sightViewModel];
 
         });
     });

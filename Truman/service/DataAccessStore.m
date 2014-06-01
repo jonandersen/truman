@@ -14,10 +14,8 @@
     NSMutableArray *sightModels = [[NSMutableArray alloc] initWithCapacity:5];
     for(int i = 0; i< 5; i ++){
         MessageViewModel * viewModel = [[MessageViewModel alloc] init];
-        viewModel.name = [NSString stringWithFormat:@"ViewModel%i",i];
-        viewModel.picture = [NSURL URLWithString:[NSString stringWithFormat:@"missingImage"]];
-        viewModel.country = @"Germany";
-        viewModel.region = @"Bavaria";
+        viewModel.message = [NSString stringWithFormat:@"ViewModel%i",i];
+        viewModel.poster = [NSString stringWithFormat:@"Poster%i",i];
         [sightModels addObject:viewModel];
     }
 

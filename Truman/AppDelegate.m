@@ -28,7 +28,7 @@
 //    viewModel.picture = [NSURL URLWithString:@"1.jpg"];
 //
 
-    vc.foodDataSource = [registry sightDataSource];
+    vc.messageDataSource = [registry sightDataSource];
     vc.imageService = [registry imageService];
     vc.registry = registry;
     return YES;

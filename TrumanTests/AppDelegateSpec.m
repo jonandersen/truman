@@ -36,7 +36,7 @@ describe(@"AppDelegate", ^{
             homeViewController = (HomeViewController *)vc.topViewController;
         });
 
-        it(@"should have sight view controller as first view", ^{
+        it(@"should have messageViewModel view controller as first view", ^{
             UINavigationController* vc = (UINavigationController*)sut.window.rootViewController;
             expect(vc.topViewController).to.beInstanceOf([HomeViewController class]);
         });
@@ -46,7 +46,7 @@ describe(@"AppDelegate", ^{
         });
 
         it(@"should have a datasource set", ^{
-            expect(homeViewController.foodDataSource).toNot.beNil();
+            expect(homeViewController.messageDataSource).toNot.beNil();
         });
 
         it(@"should have imageservice set", ^{

@@ -1,5 +1,6 @@
 #import "MessageDataSource.h"
 #import "DataAccessStore.h"
+#import "MessageViewCell.h"
 
 @interface MessageDataSource ()
 
@@ -51,7 +52,7 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    ImageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ImageCellIdentifier];
+    MessageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MessageCellIdentifier];
     MessageViewModel *sight = [self.food objectAtIndex:(NSUInteger) [indexPath section]];
     self.sightConfigure(cell, sight);
 

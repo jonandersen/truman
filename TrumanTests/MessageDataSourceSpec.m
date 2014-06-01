@@ -11,13 +11,14 @@
 
 #import "Expecta.h"
 #import "DataAccessStore.h"
+#import "MessageViewCell.h"
 
 SpecBegin(MessageDataSource)
 
 describe(@"MessageDataSource ", ^{
     __block MessageDataSource *sut;
     __block UITableView *tableView;
-    __block ImageViewCell *cell;
+    __block MessageViewCell *cell;
     __block BOOL configuredCell;
     __block MessageViewModel *viewModelFromBlock;
     __block NSArray* mockSights;
@@ -26,7 +27,7 @@ describe(@"MessageDataSource ", ^{
     beforeEach(^{
         mockSights = mock([NSArray class]);
         tableView = mock([UITableView class]);
-        cell = mock([ImageViewCell class]);
+        cell = mock([MessageViewCell class]);
         mockDataAccessStore = mock([DataAccessStore class]);
 
         //Mock out the food
@@ -39,7 +40,7 @@ describe(@"MessageDataSource ", ^{
 
         //Cell configuration
         configuredCell = NO;
-        sut.sightConfigure = ^(ImageViewCell *bannerTableViewCell, MessageViewModel *viewModel) {
+        sut.sightConfigure = ^(MessageViewCell *messageViewCell, MessageViewModel *viewModel) {
             configuredCell = YES;
             viewModelFromBlock = viewModel;
         };
@@ -85,8 +86,8 @@ describe(@"MessageDataSource ", ^{
         });
     });
 
-    describe(@"sight for indexPath", ^{
-        it(@"should return a sight for the indexpath", ^{
+    describe(@"messageViewModel for indexPath", ^{
+        it(@"should return a messageViewModel for the indexpath", ^{
             MessageViewModel *sightViewModel = mock([MessageViewModel class]);
             [given([mockSights objectAtIndex:2]) willReturn:sightViewModel];
             NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:2];
@@ -98,21 +99,21 @@ describe(@"MessageDataSource ", ^{
     describe(@"cellForRowAtIndexPath", ^{
         NSIndexPath *index = [NSIndexPath indexPathForRow:0 inSection:0];
 
-        it(@"should return a Sight Cell on position 0", ^{
-            [given([tableView dequeueReusableCellWithIdentifier:ImageCellIdentifier])willReturn:cell];
+        it(@"should return a message cell on position 0", ^{
+            [given([tableView dequeueReusableCellWithIdentifier:MessageCellIdentifier])willReturn:cell];
             UITableViewCell *result = [sut tableView:tableView cellForRowAtIndexPath:index];
-            expect(result).to.beKindOf([ImageViewCell class]);
+            expect(result).to.beKindOf([MessageViewCell class]);
 
         });
 
-        it(@"should configure the Sight Cell", ^{
+        it(@"should configure the message Cell", ^{
 
             [given([tableView dequeueReusableCellWithIdentifier:ImageCellIdentifier]) willReturn:cell];
             [sut tableView:tableView cellForRowAtIndexPath:index];
             expect(configuredCell).to.beTruthy();
         });
 
-        it(@"should provide a sight in the configure block", ^{
+        it(@"should provide a messageViewModel in the configure block", ^{
             MessageViewModel *viewModel = mock([MessageViewModel class]);
             [given([mockSights objectAtIndex:0]) willReturn:viewModel];
 
@@ -121,7 +122,7 @@ describe(@"MessageDataSource ", ^{
             expect(viewModelFromBlock).to.equal(viewModel);
         });
 
-        it(@"should provide a sight for the section index", ^{
+        it(@"should provide a messageViewModel for the section index", ^{
             MessageViewModel *viewModel = mock([MessageViewModel class]);
             [given([mockSights objectAtIndex:1]) willReturn:viewModel];
 

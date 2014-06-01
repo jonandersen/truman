@@ -6,7 +6,7 @@
 @interface HomeViewController : UIViewController
 
 @property(strong, nonatomic) MessageViewModel *foodViewModel;
-@property(strong, nonatomic)  MessageDataSource *foodDataSource;
+@property(strong, nonatomic)  MessageDataSource *messageDataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property(nonatomic, strong) id imageService;

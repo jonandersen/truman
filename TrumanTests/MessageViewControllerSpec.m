@@ -30,7 +30,7 @@ describe(@"SightViewControllerSpec", ^{
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         sut = [storyboard instantiateViewControllerWithIdentifier:@"MessageViewController"];
 
-        sut.sight = mockVM;
+        sut.messageViewModel = mockVM;
         sut.imageService = mockImageService;
         sut.swipeViewDataSource = mockSwipeViewDataSource;
 
@@ -42,8 +42,8 @@ describe(@"SightViewControllerSpec", ^{
         expect(sut.imageService).toNot.beNil();
     });
 
-    it(@"should have a sight set", ^{
-        expect(sut.sight).toNot.beNil();
+    it(@"should have a messageViewModel set", ^{
+        expect(sut.messageViewModel).toNot.beNil();
     });
 
     it(@"should have a swipeview", ^{
@@ -55,28 +55,17 @@ describe(@"SightViewControllerSpec", ^{
         expect(sut.swipeView.delegate).toNot.beNil();
     });
 
-//    it(@"should set image view to sight image", ^{
-//        UIImage *mockImage = mock([UIImage class]);
-//        NSURL *url = [NSURL URLWithString:@"testimage.jpg"];
-//        [given([mockVM picture]) willReturn:url];
-//
-//        [given([mockImageService imageForUrl:url]) willReturn:mockImage];
-//
-//        [sut viewDidLoad];
-//        expect([sut.sightUIImageView image]).to.equal(mockImage);
-//    });
-
     it(@"should have a location label", ^{
         expect(sut.locationLabel).toNot.beNil();
     });
 
-    it(@"should set the locaiton label to the sight", ^{
-        [given(mockVM.country) willReturn:@"Germany"];
-        [given(mockVM.region) willReturn:@"Bavaria"];
+    it(@"should set the message label to the messageViewModel", ^{
+        [given(mockVM.message) willReturn:@"Message"];
+        [given(mockVM.poster) willReturn:@"Poster"];
 
         [sut viewDidLoad];
 
-        expect(sut.locationLabel.text).to.equal(@"Bavaria/Germany");
+        expect(sut.locationLabel.text).to.equal(@"Message by Poster");
     });
 
 

@@ -14,7 +14,7 @@
 
 @interface MessageViewController : UIViewController
 
-@property(nonatomic, strong) MessageViewModel *sight;
+@property(nonatomic, strong) MessageViewModel *messageViewModel;
 @property (weak, nonatomic) IBOutlet SwipeView *swipeView;
 
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
