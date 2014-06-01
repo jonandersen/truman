@@ -31,8 +31,12 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MessageViewCell *cell = [self sightViewCellFromTable:tableView];
-    return [cell height];
+    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
+    if([cell isKindOfClass:[MessageViewCell class]]){
+        MessageViewCell *messageViewCell = (MessageViewCell *) cell;
+        return [messageViewCell height];
+    }
+    return 0;
 }
 
 

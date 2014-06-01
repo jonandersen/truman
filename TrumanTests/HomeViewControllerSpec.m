@@ -36,7 +36,7 @@ describe(@"HomeViewController", ^{
 
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
         sut = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
-        sut.foodViewModel = mockVM;
+        sut.messageViewModel = mockVM;
         sut.messageDataSource = mockDataSource;
         sut.registry = mockRegistry;
         [sut view];
@@ -112,7 +112,7 @@ describe(@"HomeViewController", ^{
         it(@"should set message", ^{
             block(cellMock, viewModel);
             [verify(viewModel) message];
-            [verify(cellMock) textField];
+            [verify(cellMock) messageLabel];
 
         });
     });

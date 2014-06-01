@@ -10,30 +10,23 @@
 
 NSString *const MessageCellIdentifier = @"MessageCell";
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+-(void)layoutSubviews {
+    [super layoutSubviews];
+    self.messageLabel.numberOfLines = 0;
+    [self.messageLabel sizeToFit];
+    self.container.frame = CGRectMake(10,0,300, self.messageLabel.frame.size.height);
 }
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
 
 - (CGFloat) height {
-    return self.frame.size.height;
+
+    self.messageLabel.numberOfLines = 0; // allows label to have as many lines as needed
+    [self.messageLabel sizeToFit];
+    self.container.frame = self.messageLabel.frame;
+    return self.messageLabel.frame.size.height;
 }
+
+
 
 
 @end

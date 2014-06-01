@@ -38,6 +38,7 @@
 		F9AAB651565770D4810DF36B /* UITableViewMock.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB00F9DC4D9BEC51ED664 /* UITableViewMock.m */; };
 		F9AAB6926A89E0CB3AF23EF2 /* MessageViewModelSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB3C95BA2C74ECE755324 /* MessageViewModelSpec.m */; };
 		F9AAB6B3AD763E47F700F0DB /* SwipeViewDataSourceSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB0F0F603CBDEC6A6AD98 /* SwipeViewDataSourceSpec.m */; };
+		F9AAB86D13B7AAB9EBC9E9DB /* Client.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABD83749B0F79BCED4448 /* Client.m */; };
 		F9AAB875B25FB54656627802 /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AABEA410241A5260EB2CA8 /* ImageService.m */; };
 		F9AABB0C7B5FD7CB8E56CD67 /* MessageViewCellSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB2F30622ADE9FF61B91F /* MessageViewCellSpec.m */; };
 		F9AABD3C909516B25859E3AB /* Registry.m in Sources */ = {isa = PBXBuildFile; fileRef = F9AAB1A5BAE7054DE6F4A745 /* Registry.m */; };
@@ -103,9 +104,11 @@
 		F9AABBC65E820A7B97095584 /* ImageViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewCell.h; sourceTree = "<group>"; };
 		F9AABBD6259B7405D3BFC071 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		F9AABC255D49F112F5F02776 /* DataAccessStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataAccessStore.h; sourceTree = "<group>"; };
+		F9AABC3A211D6105B20E63F4 /* Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Client.h; sourceTree = "<group>"; };
 		F9AABC4B6C895DF0F6B664A8 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		F9AABC7B279ECA42678D8A96 /* ImageViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewCell.m; sourceTree = "<group>"; };
 		F9AABCEA2AC26E08D8E4B9B1 /* MessageViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewModel.h; sourceTree = "<group>"; };
+		F9AABD83749B0F79BCED4448 /* Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Client.m; sourceTree = "<group>"; };
 		F9AABE353261484885F5EC58 /* RegistrySpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrySpec.m; sourceTree = "<group>"; };
 		F9AABEA410241A5260EB2CA8 /* ImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageService.m; sourceTree = "<group>"; };
 		F9AABEAF180D9830D65CC31B /* MessageDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDataSource.h; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				F9AABC255D49F112F5F02776 /* DataAccessStore.h */,
 				F9AABEA410241A5260EB2CA8 /* ImageService.m */,
 				F9AABFB76C0F5ADEA1A08F5F /* ImageService.h */,
+				F9AABD83749B0F79BCED4448 /* Client.m */,
+				F9AABC3A211D6105B20E63F4 /* Client.h */,
 			);
 			path = service;
 			sourceTree = "<group>";
@@ -462,6 +467,7 @@
 				F9AABFF3816ECD8169D6A682 /* SwipeViewDataSource.m in Sources */,
 				F9AAB24B49330306E005C9C9 /* ImageViewCell.m in Sources */,
 				F9AAB0B4C4107C6D52B6F751 /* MessageViewCell.m in Sources */,
+				F9AAB86D13B7AAB9EBC9E9DB /* Client.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

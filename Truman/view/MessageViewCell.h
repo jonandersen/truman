@@ -9,7 +9,8 @@
 @interface MessageViewCell : UITableViewCell
 
 FOUNDATION_EXPORT NSString *const MessageCellIdentifier;
-@property (weak, nonatomic) IBOutlet UITextView *textField;
+@property (weak, nonatomic) IBOutlet UILabel *messageLabel;
+@property (weak, nonatomic) IBOutlet UIView *container;
 
 - (CGFloat)height;
 

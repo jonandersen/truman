@@ -14,11 +14,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [RACObserve(self, foodViewModel.poster) subscribeNext:^(NSString*  name) {
+    [RACObserve(self, messageViewModel.poster) subscribeNext:^(NSString*  name) {
         self.title = name;
     }];
     self.messageDataSource.sightConfigure = ^(MessageViewCell *cell, MessageViewModel *messageViewModel){
-        cell.textField.text = messageViewModel.message;
+        cell.messageLabel.text = messageViewModel.message;
+        [cell setNeedsLayout];
     };
     self.tableView.delegate = self.messageDataSource;
     self.tableView.dataSource = self.messageDataSource;
@@ -26,9 +27,6 @@
 
     // Do any additional setup after loading the view.
 }
-
-
-
 
 
 #pragma mark - Navigation

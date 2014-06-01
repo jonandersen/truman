@@ -5,7 +5,7 @@
 
 @interface HomeViewController : UIViewController
 
-@property(strong, nonatomic) MessageViewModel *foodViewModel;
+@property(strong, nonatomic) MessageViewModel *messageViewModel;
 @property(strong, nonatomic)  MessageDataSource *messageDataSource;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
