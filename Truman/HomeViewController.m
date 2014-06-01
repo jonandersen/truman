@@ -17,7 +17,7 @@
         self.title = name;
     }];
     __weak HomeViewController* weakSelf = self;
-    self.foodDataSource.sightConfigure = ^(MessageViewCell *cell, MessageViewModel *sight ){
+    self.foodDataSource.sightConfigure = ^(ImageViewCell *cell, MessageViewModel *sight ){
         cell.titleLabel.text = sight.name;
         cell.sightImageView.image = [weakSelf.imageService imageForUrl:sight.picture];
     };

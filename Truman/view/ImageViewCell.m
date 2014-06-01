@@ -1,14 +1,9 @@
-//
-// Created by Jon Andersen on 31/05/14.
-// Copyright (c) 2014 Jon Andersen. All rights reserved.
-//
 
-#import "MessageViewCell.h"
+#import "ImageViewCell.h"
 
+@implementation ImageViewCell
 
-@implementation MessageViewCell
-
-NSString *const MessageCellIdentifier = @"MessageCell";
+NSString *const ImageCellIdentifier = @"ImageCell";
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -34,6 +29,5 @@ NSString *const MessageCellIdentifier = @"MessageCell";
 - (CGFloat) height {
     return self.frame.size.height;
 }
-
 
 @end

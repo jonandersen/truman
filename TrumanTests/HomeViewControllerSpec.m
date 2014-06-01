@@ -10,7 +10,7 @@
 #import "Expecta.h"
 
 #import "HomeViewController.h"
-#import "MessageViewCell.h"
+#import "ImageViewCell.h"
 #import "UITableViewMock.h"
 #import "MessageDataSource.h"
 #import "MessageViewController.h"
@@ -93,15 +93,15 @@ describe(@"HomeViewController", ^{
         });
     });
 
-    describe(@"Configure MessageViewCell", ^{
-        __block MessageViewCell *cellMock;
+    describe(@"Configure ImageViewCell", ^{
+        __block ImageViewCell *cellMock;
         __block MessageViewModel *viewModel;
         __block MKTArgumentCaptor *argument;
         __block BannerTableViewCellConfigureBlock block;
 
         beforeEach(^{
             argument = [[MKTArgumentCaptor alloc] init];
-            cellMock = mock([MessageViewCell class]);
+            cellMock = mock([ImageViewCell class]);
             viewModel = mock([MessageViewModel class]);
             [sut.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             [verify(mockDataSource) setSightConfigure:[argument capture]];

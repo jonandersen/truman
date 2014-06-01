@@ -1,10 +1,10 @@
 
-#import "MessageViewCell.h"
+#import "ImageViewCell.h"
 #import "MessageViewModel.h"
 
 @class DataAccessStore;
 
-typedef void (^BannerTableViewCellConfigureBlock)(MessageViewCell *cell, MessageViewModel *item);
+typedef void (^BannerTableViewCellConfigureBlock)(ImageViewCell *cell, MessageViewModel *item);
 
 @interface MessageDataSource : NSObject <UITableViewDataSource, UITableViewDelegate>
 

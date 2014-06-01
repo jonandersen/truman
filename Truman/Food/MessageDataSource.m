@@ -4,7 +4,7 @@
 @interface MessageDataSource ()
 
     @property (strong, nonatomic) NSArray *food;
-    @property (strong, nonatomic) MessageViewCell *foodViewCell;
+    @property (strong, nonatomic) ImageViewCell *foodViewCell;
     @property (nonatomic, strong) DataAccessStore* dataAccessStore;
 
 @end
@@ -30,7 +30,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    MessageViewCell *cell = [self sightViewCellFromTable:tableView];
+    ImageViewCell *cell = [self sightViewCellFromTable:tableView];
     return [cell height];
 }
 
@@ -51,7 +51,7 @@
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    MessageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
+    ImageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:ImageCellIdentifier];
     MessageViewModel *sight = [self.food objectAtIndex:(NSUInteger) [indexPath section]];
     self.sightConfigure(cell, sight);
 
@@ -60,9 +60,9 @@
 }
 
 
-- (MessageViewCell *)sightViewCellFromTable:(UITableView *) tableView {
+- (ImageViewCell *)sightViewCellFromTable:(UITableView *) tableView {
     if (!self.foodViewCell) {
-        self.foodViewCell = [tableView dequeueReusableCellWithIdentifier:FoodCellIdentifier];
+        self.foodViewCell = [tableView dequeueReusableCellWithIdentifier:ImageCellIdentifier];
     }
     return self.foodViewCell;
 }
