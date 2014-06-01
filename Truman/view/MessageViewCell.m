@@ -12,18 +12,16 @@ NSString *const MessageCellIdentifier = @"MessageCell";
 
 -(void)layoutSubviews {
     [super layoutSubviews];
-    self.messageLabel.numberOfLines = 0;
-    [self.messageLabel sizeToFit];
-    self.container.frame = CGRectMake(10,0,300, self.messageLabel.frame.size.height);
+    self.messageLabel.preferredMaxLayoutWidth = CGRectGetWidth(self.messageLabel.frame);
 }
 
 
 - (CGFloat) height {
-
-    self.messageLabel.numberOfLines = 0; // allows label to have as many lines as needed
-    [self.messageLabel sizeToFit];
-    self.container.frame = self.messageLabel.frame;
-    return self.messageLabel.frame.size.height;
+    [self setNeedsLayout];
+    [self layoutIfNeeded];
+    
+    CGSize fittingSize = [self.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return fittingSize.height;
 }
 
 

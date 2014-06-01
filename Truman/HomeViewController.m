@@ -23,6 +23,7 @@
     };
     self.tableView.delegate = self.messageDataSource;
     self.tableView.dataSource = self.messageDataSource;
+    self.tableView.estimatedRowHeight = 80;
     
 
     // Do any additional setup after loading the view.

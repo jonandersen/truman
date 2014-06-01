@@ -31,12 +31,15 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self tableView:tableView cellForRowAtIndexPath:indexPath];
-    if([cell isKindOfClass:[MessageViewCell class]]){
-        MessageViewCell *messageViewCell = (MessageViewCell *) cell;
-        return [messageViewCell height];
-    }
-    return 0;
+
+    MessageViewCell *cell = [self sightViewCellFromTable:tableView];
+    cell.bounds = CGRectMake(0.0f, 0.0f, CGRectGetWidth(tableView.bounds), CGRectGetHeight(cell.bounds));
+    
+    MessageViewModel *messageViewModel = [self.messages objectAtIndex:(NSUInteger) [indexPath section]];
+    self.sightConfigure(cell, messageViewModel);
+    
+    return [cell height];
+ 
 }
 
 
