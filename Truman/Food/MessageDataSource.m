@@ -4,8 +4,8 @@
 
 @interface MessageDataSource ()
 
-    @property (strong, nonatomic) NSArray *food;
-    @property (strong, nonatomic) ImageViewCell *foodViewCell;
+    @property (strong, nonatomic) NSArray *messages;
+    @property (strong, nonatomic) MessageViewCell *messageViewCell;
     @property (nonatomic, strong) DataAccessStore* dataAccessStore;
 
 @end
@@ -19,19 +19,19 @@
 - (instancetype) initWithStore:(DataAccessStore *)dataAccessStore {
     if (self  = [super init]) {
         self.dataAccessStore = dataAccessStore;
-        self.food = [self.dataAccessStore sightViewModels];
+        self.messages = [self.dataAccessStore sightViewModels];
     }
     return self;
 }
 
 - (void) dealloc {
-    self.food = nil;
-    self.foodViewCell = nil;
+    self.messages = nil;
+    self.messageViewCell = nil;
     self.dataAccessStore = nil;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ImageViewCell *cell = [self sightViewCellFromTable:tableView];
+    MessageViewCell *cell = [self sightViewCellFromTable:tableView];
     return [cell height];
 }
 
@@ -42,7 +42,7 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return [self.food count];
+    return [self.messages count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -53,7 +53,7 @@
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     MessageViewCell *cell = [tableView dequeueReusableCellWithIdentifier:MessageCellIdentifier];
-    MessageViewModel *sight = [self.food objectAtIndex:(NSUInteger) [indexPath section]];
+    MessageViewModel *sight = [self.messages objectAtIndex:(NSUInteger) [indexPath section]];
     self.sightConfigure(cell, sight);
 
     return cell;
@@ -61,14 +61,14 @@
 }
 
 
-- (ImageViewCell *)sightViewCellFromTable:(UITableView *) tableView {
-    if (!self.foodViewCell) {
-        self.foodViewCell = [tableView dequeueReusableCellWithIdentifier:ImageCellIdentifier];
+- (MessageViewCell *)sightViewCellFromTable:(UITableView *) tableView {
+    if (!self.messageViewCell) {
+        self.messageViewCell = [tableView dequeueReusableCellWithIdentifier:MessageCellIdentifier];
     }
-    return self.foodViewCell;
+    return self.messageViewCell;
 }
 
 - (MessageViewModel *)sightForIndexPath:(NSIndexPath *)indexPath {
-    return [[self food] objectAtIndex:(NSUInteger) [indexPath section]];
+    return [[self messages] objectAtIndex:(NSUInteger) [indexPath section]];
 }
 @end

@@ -11,4 +11,6 @@
 FOUNDATION_EXPORT NSString *const MessageCellIdentifier;
 @property (weak, nonatomic) IBOutlet UITextView *textField;
 
+- (CGFloat)height;
+
 @end

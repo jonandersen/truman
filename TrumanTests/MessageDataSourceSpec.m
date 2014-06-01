@@ -30,7 +30,7 @@ describe(@"MessageDataSource ", ^{
         cell = mock([MessageViewCell class]);
         mockDataAccessStore = mock([DataAccessStore class]);
 
-        //Mock out the food
+        //Mock out the messages
         [given([mockDataAccessStore sightViewModels]) willReturn:mockSights];
 
 
@@ -65,7 +65,7 @@ describe(@"MessageDataSource ", ^{
 
 
     describe(@"numberOfSectionsInTableView", ^{
-        it(@"should have as many as food", ^{
+        it(@"should have as many as messages", ^{
             [given([mockSights count]) willReturn:[NSNumber numberWithInt:2]];
             NSInteger rows = [sut numberOfSectionsInTableView:tableView];
             expect(rows).to.equal([mockSights count]);
@@ -74,7 +74,7 @@ describe(@"MessageDataSource ", ^{
 
     describe(@"height calcuation", ^{
         it(@"should use the height for the cell", ^{
-            [given([tableView dequeueReusableCellWithIdentifier:ImageCellIdentifier]) willReturn:cell];
+            [given([tableView dequeueReusableCellWithIdentifier:MessageCellIdentifier]) willReturn:cell];
             [sut tableView:tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
             [verify(cell) height];
         });
